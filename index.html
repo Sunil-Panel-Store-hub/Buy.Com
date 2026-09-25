@@ -12,34 +12,7 @@
 <script>
 // ===== Panel Data with individual download links =====
 const panelsData = [
-  {
-    id:'RAPID CORE - ROOT',
-    name:'RAPID CORE - ROOT',
-    badge:'Root ✅',
-    badgeType:'root',
-    logo:'https://i.ibb.co/27hfnzJS/IMG-20260727-200128-275.jpg',
-    downloadLink:'https://t.me/RapidCoreOfficialChannel',
-    plans:[
-      {duration:'1 Day',price:'₹87'},
-      {duration:'7 Days',price:'₹297'},
-      {duration:'14 Days',price:'₹539'},
-      {duration:'30 Days',price:'₹1089'}
-    ]
-  },
-  {
-    id:'BR MODS',
-    name:'BR MODS - Root',
-    badge:'Root ✅',
-    badgeType:'root',
-    logo:'https://i.ibb.co/G3k0SJcf/serve-upload-2.png',
-    downloadLink:'https://t.me/BRMODSOfficialChannel',
-    plans:[
-      {duration:'1 Day',price:'₹90'},
-      {duration:'7 Days',price:'₹270'},
-      {duration:'15 Days',price:'₹450'},
-      {duration:'30 Days',price:'₹630'}
-    ]
-  },
+  // 1. Drip Client - Non Root
   {
     id:'drip-nonroot',
     name:'Drip Client - Non Root',
@@ -55,6 +28,35 @@ const panelsData = [
       {duration:'30 Days',price:'₹600'}
     ]
   },
+  // 2. Drip Client - Root
+  {
+    id:'Drip Client - Root',
+    name:'Drip Client - Root',
+    badge:'Root ✅',
+    badgeType:'root',
+    logo:'https://i.ibb.co/fdJrgckG/serve-upload-1.png',
+    downloadLink:'https://t.me/godsunil2k_store_update/11',
+    plans:[
+      {duration:'1 Day',price:'₹90'},
+      {duration:'7 Days',price:'₹360'}, 
+      {duration:'30 Days',price:'₹720'}
+    ]
+  },
+  // 3. HG Cheats - Non Root + Root
+  {
+    id:'HG Cheats - Non Root + Root',
+    name:'HG Cheats - Non Root + Root',
+    badge:'Non Root + Root',
+    badgeType:'pro',
+    logo:'https://i.ibb.co/f53C6gZ/IMG-20260727-105950-693.jpg',
+    downloadLink:'https://t.me/HGCheatsOfficialChannel',
+    plans:[
+      {duration:'1 Day',price:'₹80'},
+      {duration:'10 Days',price:'₹296'},
+      {duration:'30 Days',price:'₹598'}
+    ]
+  },
+  // 4. Prime Hook - Non Root
   {
     id:'prime-nonroot',
     name:'Prime Hook - Non Root',
@@ -69,19 +71,7 @@ const panelsData = [
       {duration:'10 Days',price:'₹308'}
     ]
   },
-  {
-    id:'HG Cheats - Non Root + Root',
-    name:'HG Cheats - Non Root + Root',
-    badge:'Non Root + Root',
-    badgeType:'pro',
-    logo:'https://i.ibb.co/f53C6gZ/IMG-20260727-105950-693.jpg',
-    downloadLink:'https://t.me/HGCheatsOfficialChannel',
-    plans:[
-      {duration:'1 Day',price:'₹80'},
-      {duration:'10 Days',price:'₹296'},
-      {duration:'30 Days',price:'₹598'}
-    ]
-  },
+  // 5. Pato Team - Non Root
   {
     id:'pato-nonroot',
     name:'Pato Team - Non Root',
@@ -96,20 +86,7 @@ const panelsData = [
       {duration:'30 Days',price:'₹990'}
     ]
   },
-  {
-    id:'reafer-pro - Root',
-    name:'Reafer X Pro - Root',
-    badge:'Pro Panel',
-    badgeType:'pro',
-    logo:'https://i.ibb.co/3yyS3Z7S/01-KW9-GF9-GQJVR3-H6-Y8-MAJR02-VC-1.jpg',
-    downloadLink:'https://t.me/+raxeJNN1uDViM2I1',
-    plans:[
-      {duration:'1 Day',price:'₹90'},
-      {duration:'10 Day',price:'₹350'},
-      {duration:'20 Day',price:'₹594'},
-      {duration:'31 Days',price:'₹801'}
-    ]
-  },
+  // 6. Angry Mod - Root
   {
     id:'angry-root',
     name:'Angry Mod - Root',
@@ -124,9 +101,25 @@ const panelsData = [
       {duration:'30 Day',price:'₹800'}
     ]
   },
+  // 7. Reafer X Pro - Root
+  {
+    id:'reafer-pro - Root',
+    name:'Reafer X Pro - Root',
+    badge:'Pro Panel',
+    badgeType:'pro',
+    logo:'https://i.ibb.co/3yyS3Z7S/01-KW9-GF9-GQJVR3-H6-Y8-MAJR02-VC-1.jpg',
+    downloadLink:'https://t.me/+raxeJNN1uDViM2I1',
+    plans:[
+      {duration:'1 Day',price:'₹90'},
+      {duration:'10 Day',price:'₹350'},
+      {duration:'20 Day',price:'₹594'},
+      {duration:'31 Days',price:'₹801'}
+    ]
+  },
+  // 8. Silent Cheats Root - Root
   {
     id:'silent-cheats-root-safe',
-    name:'Silent Cheats Root - Safe',
+    name:'Silent Cheats Root - Root',
     badge:'Root',
     badgeType:'root',
     logo:'https://i.ibb.co/nMXQjf3N/IMG-20260905-232138-442.jpg',
@@ -139,6 +132,7 @@ const panelsData = [
       {duration:'28 Days',price:'₹900'}
     ]
   },
+  // 9. HAXX CKER PRO - Root
   {
     id:'HAXX CKER PRO - Root',
     name:'HAXX CKER PRO - Root',
@@ -154,20 +148,37 @@ const panelsData = [
       {duration:'120 Days',price:'₹5400'}
     ]
   },
+  // 10. RAPID CORE - Root
   {
-    id:'Drip Wire',
-    name:'Drip Wire - Non Root',
-    badge:'Non Root ✅',
-    badgeType:'Non root',
-    logo:'https://i.ibb.co/ynFxxJwv/1788707334391.png',
-    downloadLink:'https://t.me/DripWire_OFC',
+    id:'RAPID CORE - ROOT',
+    name:'RAPID CORE - Root',
+    badge:'Root ✅',
+    badgeType:'root',
+    logo:'https://i.ibb.co/27hfnzJS/IMG-20260727-200128-275.jpg',
+    downloadLink:'https://t.me/RapidCoreOfficialChannel',
     plans:[
-      {duration:'6 Houre',price:'₹35'},
-      {duration:'12 Houre',price:'₹60'},
-      {duration:'1 Day',price:'₹90'},
-      {duration:'7 Days',price:'₹350'}
+      {duration:'1 Day',price:'₹87'},
+      {duration:'7 Days',price:'₹297'},
+      {duration:'14 Days',price:'₹539'},
+      {duration:'30 Days',price:'₹1089'}
     ]
   },
+  // 11. BR MODS - Root
+  {
+    id:'BR MODS',
+    name:'BR MODS - Root',
+    badge:'Root ✅',
+    badgeType:'root',
+    logo:'https://i.ibb.co/G3k0SJcf/serve-upload-2.png',
+    downloadLink:'https://t.me/BRMODSOfficialChannel',
+    plans:[
+      {duration:'1 Day',price:'₹90'},
+      {duration:'7 Days',price:'₹270'},
+      {duration:'15 Days',price:'₹450'},
+      {duration:'30 Days',price:'₹630'}
+    ]
+  },
+  // 12. Hex Blade - Root
   {
     id:'Hex Blade-root',
     name:'Hex Blade - Root',
@@ -182,6 +193,7 @@ const panelsData = [
       {duration:'30 Day',price:'₹999'}
     ]
   },
+  // 13. Unseen Mods - Root
   {
     id:'Unseen Mods-root',
     name:'Unseen Mods - Root',
@@ -196,6 +208,7 @@ const panelsData = [
       {duration:'30 Day',price:'₹999'}
     ]
   },
+  // 14. Crack Master - Root
   {
     id:'Crack Master-root',
     name:'Crack Master - Root',
@@ -210,11 +223,27 @@ const panelsData = [
       {duration:'30 Days',price:'₹449'}
     ]
   },
+  // 15. Drip Wire - Non Root
+  {
+    id:'Drip Wire',
+    name:'Drip Wire - Non Root',
+    badge:'Non Root ✅',
+    badgeType:'nonroot',
+    logo:'https://i.ibb.co/ynFxxJwv/1788707334391.png',
+    downloadLink:'https://t.me/DripWire_OFC',
+    plans:[
+      {duration:'6 Houre',price:'₹35'},
+      {duration:'12 Houre',price:'₹60'},
+      {duration:'1 Day',price:'₹90'},
+      {duration:'7 Days',price:'₹350'}
+    ]
+  },
+  // 16. ABCD - Non Root
   {
     id:'ABCD - Non root',
     name:'ABCD - Non Root',
-    badge:'Non - Root',
-    badgeType:'Non - root',
+    badge:'Non Root',
+    badgeType:'nonroot',
     logo:'https://i.ibb.co/9HkVMRHW/IMG-20260906-203508-084.jpg',
     downloadLink:'https://t.me/Buy_ABCD_Official',
     plans:[
@@ -341,7 +370,7 @@ function setC(){
     copyBtn.innerHTML='<i class="fas fa-copy"></i> Copy';
   },2500);
 }
-console.log('✅ God Sunil Panel Store loaded with 10 panels and individual download links.');
+console.log('✅ God Sunil Panel Store loaded with 16 panels and individual download links.');
 </script>
 </body>
-</html> 
+</html>
