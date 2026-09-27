@@ -24,6 +24,8 @@
   --purple-d:#8b5cf6;
   --green:#4ade80;
   --red:#f87171;
+  --tg:#2AABEE;
+  --tg-d:#229ED9;
   --text:#e8edf5;
   --text-2:#b0bedb;
   --muted:#8892a8;
@@ -202,6 +204,75 @@ main{padding-top:var(--nav-h)}
 }
 .stat span{display:block;font-size:.63rem;color:var(--muted);text-transform:uppercase;letter-spacing:.9px;margin-top:.28rem;font-weight:600}
 
+/* ============ TELEGRAM JOIN CARD (HERO) ============ */
+.tg-join-card{
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;gap:.9rem;
+  max-width:540px;margin:2.2rem auto 0;
+  padding:.85rem 1rem;
+  text-decoration:none;
+  background:linear-gradient(135deg, rgba(42,171,238,.16), rgba(42,171,238,.04) 60%, rgba(0,245,212,.06));
+  border:1px solid rgba(42,171,238,.32);
+  border-radius:20px;
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  box-shadow:0 16px 46px rgba(0,0,0,.45), 0 0 42px rgba(42,171,238,.12);
+  transition:transform .3s cubic-bezier(.2,.8,.2,1), border-color .3s, box-shadow .3s;
+}
+.tg-join-card::after{
+  content:'';position:absolute;top:0;left:-140%;width:55%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.16),transparent);
+  transform:skewX(-22deg);transition:left .7s ease;pointer-events:none;
+}
+.tg-join-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(42,171,238,.6);
+  box-shadow:0 22px 60px rgba(0,0,0,.55), 0 0 60px rgba(42,171,238,.25);
+}
+.tg-join-card:hover::after{left:150%}
+
+.tg-avatar{
+  position:relative;flex-shrink:0;
+  width:56px;height:56px;border-radius:50%;overflow:hidden;
+  border:2px solid rgba(42,171,238,.55);
+  box-shadow:0 0 22px rgba(42,171,238,.35);
+  background:#0b0e14;
+}
+.tg-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.tg-avatar::after{
+  content:'';position:absolute;inset:-4px;border-radius:50%;
+  border:1px solid rgba(42,171,238,.35);
+  animation:tgRing 2.6s ease-out infinite;pointer-events:none;
+}
+@keyframes tgRing{0%{transform:scale(.9);opacity:.8}100%{transform:scale(1.35);opacity:0}}
+
+.tg-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:.22rem;text-align:left}
+.tg-name{
+  font-family:'Orbitron',sans-serif;font-weight:700;font-size:.92rem;letter-spacing:-.1px;
+  color:#f2f6ff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.tg-meta{
+  display:flex;align-items:center;gap:.4rem;
+  font-size:.72rem;font-weight:600;color:var(--muted);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.tg-meta .dot-live{
+  width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0;
+  box-shadow:0 0 9px var(--green);animation:blink 1.8s ease-in-out infinite;
+}
+.tg-join-btn{
+  position:relative;flex-shrink:0;
+  display:inline-flex;align-items:center;gap:.45rem;
+  padding:.62rem 1.3rem;border-radius:99px;
+  background:linear-gradient(135deg,var(--tg),var(--tg-d));
+  color:#fff;font-size:.82rem;font-weight:800;letter-spacing:.35px;
+  box-shadow:0 6px 22px rgba(42,171,238,.42);
+  transition:transform .2s, box-shadow .3s, filter .2s;
+}
+.tg-join-card:hover .tg-join-btn{
+  transform:scale(1.05);filter:brightness(1.12);
+  box-shadow:0 10px 32px rgba(42,171,238,.62);
+}
+
 /* ============ SECTION TITLES ============ */
 .sec-title{
   font-family:'Orbitron',sans-serif;font-weight:800;text-align:center;
@@ -255,7 +326,6 @@ main{padding-top:var(--nav-h)}
 }
 .filter-tab:hover{color:var(--text-2)}
 .filter-tab.active{background:linear-gradient(135deg,var(--teal),var(--teal-d));color:#0b0e14;box-shadow:0 4px 14px rgba(0,245,212,.25)}
-.filter-tab.active[data-filter="root"]{background:linear-gradient(135deg,var(--teal),var(--teal-d))}
 .filter-tab.active[data-filter="nonroot"]{background:linear-gradient(135deg,var(--gold),var(--gold-d));box-shadow:0 4px 14px rgba(255,179,71,.25)}
 .filter-tab.active[data-filter="pro"]{background:linear-gradient(135deg,var(--purple),var(--purple-d));box-shadow:0 4px 14px rgba(167,139,250,.25);color:#fff}
 
@@ -308,7 +378,10 @@ main{padding-top:var(--nav-h)}
 }
 .panel-section:hover .panel-glow{opacity:1}
 
-.panel-header{display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap;margin-bottom:1.6rem;position:relative;z-index:1}
+.panel-header{
+  display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap;
+  margin-bottom:1.6rem;position:relative;z-index:1;
+}
 .panel-logo-wrap{position:relative;flex-shrink:0}
 .panel-logo{
   width:68px;height:68px;border-radius:50%;object-fit:cover;
@@ -329,7 +402,7 @@ main{padding-top:var(--nav-h)}
 .panel-section:hover .panel-logo-wrap::after{opacity:1}
 @keyframes spinSlow{to{transform:rotate(360deg)}}
 
-.panel-meta{flex:1;min-width:170px}
+.panel-meta{flex:1;min-width:150px}
 .panel-name{
   font-family:'Orbitron',sans-serif;font-weight:700;font-size:1.16rem;
   letter-spacing:-.2px;color:#f2f6ff;line-height:1.25;
@@ -363,6 +436,31 @@ main{padding-top:var(--nav-h)}
   background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
 }
 .panel-rating i{color:var(--gold);font-size:.6rem}
+
+/* ============ PANEL-LEVEL JOIN BUTTON ============ */
+.panel-join-btn{
+  position:relative;overflow:hidden;flex-shrink:0;
+  display:inline-flex;align-items:center;gap:.45rem;
+  padding:.6rem 1.25rem;border-radius:99px;
+  background:linear-gradient(135deg,var(--tg),var(--tg-d));
+  color:#fff;font-size:.78rem;font-weight:800;letter-spacing:.35px;
+  text-decoration:none;margin-left:auto;
+  box-shadow:0 5px 20px rgba(42,171,238,.35);
+  transition:transform .22s cubic-bezier(.2,.8,.2,1), box-shadow .3s, filter .2s;
+  white-space:nowrap;
+}
+.panel-join-btn::after{
+  content:'';position:absolute;top:0;left:-130%;width:55%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);
+  transform:skewX(-22deg);transition:left .6s ease;pointer-events:none;
+}
+.panel-join-btn:hover{
+  transform:translateY(-2px) scale(1.04);
+  box-shadow:0 10px 30px rgba(42,171,238,.6);
+  filter:brightness(1.12);
+}
+.panel-join-btn:hover::after{left:150%}
+.panel-join-btn i{font-size:.86rem}
 
 /* ============ PRICING GRID ============ */
 .pricing-grid{
@@ -624,7 +722,6 @@ footer{
 .modal-sub{text-align:center;font-size:.85rem;color:var(--muted);margin-bottom:1.3rem}
 .modal-sub strong{color:var(--teal);font-weight:700}
 
-/* Stepper */
 .stepper{display:flex;align-items:center;justify-content:center;gap:.4rem;margin-bottom:1.4rem}
 .step{display:flex;align-items:center;gap:.45rem;font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
 .step .num{
@@ -712,6 +809,11 @@ footer{
   .hero{padding:2.6rem .5rem 2.2rem}
   .hero-stats{grid-template-columns:repeat(2,1fr);gap:.6rem}
   .stat{padding:.85rem .5rem}
+  .tg-join-card{margin-top:1.8rem;gap:.7rem;padding:.75rem .85rem;border-radius:18px}
+  .tg-avatar{width:48px;height:48px}
+  .tg-name{font-size:.82rem}
+  .tg-meta{font-size:.66rem}
+  .tg-join-btn{padding:.52rem 1.05rem;font-size:.75rem}
   .toolbar{padding:.7rem 0}
   .toolbar-inner{padding:0 1rem;gap:.6rem}
   .search-wrap{min-width:100%;order:1}
@@ -719,10 +821,14 @@ footer{
   .filter-tabs::-webkit-scrollbar{display:none}
   .sort-wrap{order:3}
   .panel-section{padding:1.2rem 1rem;border-radius:20px}
-  .panel-header{gap:.8rem;margin-bottom:1.2rem}
+  .panel-header{gap:.7rem;margin-bottom:1.2rem}
   .panel-logo{width:54px;height:54px}
   .panel-name{font-size:.98rem}
   .panel-badge{font-size:.58rem;padding:.22rem .62rem}
+  .panel-join-btn{
+    padding:.5rem 1rem;font-size:.72rem;
+    margin-left:0;
+  }
   .pricing-grid{grid-template-columns:repeat(2,1fr);gap:.6rem}
   .price-card{padding:.9rem .5rem .85rem;border-radius:14px}
   .price-card .price{font-size:1.05rem}
@@ -744,12 +850,18 @@ footer{
 }
 @media(max-width:420px){
   .hero-title{font-size:1.65rem}
+  .tg-join-card{gap:.55rem;padding:.65rem .7rem}
+  .tg-avatar{width:42px;height:42px}
+  .tg-name{font-size:.74rem}
+  .tg-meta{font-size:.6rem}
+  .tg-join-btn{padding:.46rem .8rem;font-size:.68rem;gap:.35rem}
   .pricing-grid{gap:.5rem}
   .price-card{padding:.75rem .3rem .7rem;border-radius:12px}
   .price-card .price{font-size:.95rem}
   .btn-buy{font-size:.63rem;padding:.4rem .25rem}
   .panel-logo{width:46px;height:46px}
   .panel-name{font-size:.88rem}
+  .panel-join-btn{padding:.45rem .85rem;font-size:.66rem;gap:.35rem}
   .stat b{font-size:1rem}
   .stat span{font-size:.56rem}
   #qrCodeContainer{min-height:130px}
@@ -788,8 +900,8 @@ footer{
       <a href="#why">Why Us</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a class="nav-cta" href="https://t.me/GodSunil2k" target="_blank" rel="noopener">
-      <i class="fab fa-telegram-plane"></i> Contact
+    <a class="nav-cta" href="https://t.me/godsunil2k_store_update" target="_blank" rel="noopener">
+      <i class="fab fa-telegram-plane"></i> Join
     </a>
   </div>
 </header>
@@ -811,6 +923,22 @@ footer{
         <div class="stat"><b>Instant</b><span>Auto Delivery</span></div>
         <div class="stat"><b>100%</b><span>Secure UPI</span></div>
       </div>
+
+      <!-- ===== MAIN TELEGRAM JOIN CARD ===== -->
+      <a class="tg-join-card"
+         href="https://t.me/godsunil2k_store_update"
+         target="_blank" rel="noopener"
+         aria-label="Join God Sunil Store Updates on Telegram">
+        <span class="tg-avatar">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2300f5d4'/%3E%3Cstop offset='1' stop-color='%230088cc'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='50' fill='url(%23g)'/%3E%3Cpath d='M28 66 L24 38 L38 50 L50 32 L62 50 L76 38 L72 66 Z' fill='%230b0e14'/%3E%3Crect x='28' y='68' width='44' height='6' rx='3' fill='%230b0e14'/%3E%3C/svg%3E"
+               alt="God Sunil Store Updates logo" width="56" height="56" loading="lazy">
+        </span>
+        <span class="tg-info">
+          <span class="tg-name">God Sunil Store Updates</span>
+          <span class="tg-meta"><span class="dot-live"></span> Official Channel · Free Panels &amp; Alerts</span>
+        </span>
+        <span class="tg-join-btn"><i class="fab fa-telegram-plane"></i> Join</span>
+      </a>
     </section>
   </div>
 
@@ -983,7 +1111,10 @@ footer{
    GOD SUNIL PANEL STORE — APP
    ========================================================== */
 
-/* ---------- PANEL DATA (edit here) ---------- */
+/* ---------- PANEL DATA ----------
+   Each panel has its own `joinLink` for the per-panel Join button.
+   If omitted, the button falls back to `downloadLink`.
+----------------------------------- */
 const panelsData = [
   {
     id:'drip-nonroot',
@@ -991,6 +1122,7 @@ const panelsData = [
     badge:'Non Root',
     badgeType:'nonroot',
     logo:'https://i.ibb.co/fdJrgckG/serve-upload-1.png',
+    joinLink:'https://t.me/DripClientOfficialChannel',
     downloadLink:'https://t.me/DripClientOfficialChannel',
     tag:'Popular',
     rating:4.9,
@@ -1008,6 +1140,7 @@ const panelsData = [
     badge:'Root ✅',
     badgeType:'root',
     logo:'https://i.ibb.co/fdJrgckG/serve-upload-1.png',
+    joinLink:'https://t.me/godsunil2k_store_update/11',
     downloadLink:'https://t.me/godsunil2k_store_update/11',
     tag:'Hot',
     rating:4.9,
@@ -1023,6 +1156,7 @@ const panelsData = [
     badge:'Non Root + Root',
     badgeType:'pro',
     logo:'https://i.ibb.co/f53C6gZ/IMG-20260727-105950-693.jpg',
+    joinLink:'https://t.me/HGCheatsOfficialChannel',
     downloadLink:'https://t.me/HGCheatsOfficialChannel',
     tag:null,
     rating:4.7,
@@ -1038,6 +1172,7 @@ const panelsData = [
     badge:'Non Root',
     badgeType:'nonroot',
     logo:'https://i.ibb.co/zTvk1HfS/serve-upload.jpg',
+    joinLink:'https://t.me/PRIME_HOOK_Official',
     downloadLink:'https://t.me/PRIME_HOOK_Official',
     tag:'Best Value',
     rating:4.8,
@@ -1054,6 +1189,7 @@ const panelsData = [
     badge:'Non Root',
     badgeType:'nonroot',
     logo:'https://i.ibb.co/yF9sSPd3/serve-upload.png',
+    joinLink:'https://t.me/PatoTeamOfficialChannel',
     downloadLink:'https://t.me/PatoTeamOfficialChannel',
     tag:null,
     rating:4.6,
@@ -1070,6 +1206,7 @@ const panelsData = [
     badge:'Root',
     badgeType:'root',
     logo:'https://i.ibb.co/9kYhRhFF/IMG-20260704-202329-705.jpg',
+    joinLink:'https://t.me/AngryModOfficialChannel',
     downloadLink:'https://t.me/AngryModOfficialChannel',
     tag:null,
     rating:4.7,
@@ -1086,6 +1223,7 @@ const panelsData = [
     badge:'Pro Panel',
     badgeType:'pro',
     logo:'https://i.ibb.co/3yyS3Z7S/01-KW9-GF9-GQJVR3-H6-Y8-MAJR02-VC-1.jpg',
+    joinLink:'https://t.me/+raxeJNN1uDViM2I1',
     downloadLink:'https://t.me/+raxeJNN1uDViM2I1',
     tag:'Premium',
     rating:5.0,
@@ -1102,6 +1240,7 @@ const panelsData = [
     badge:'Root',
     badgeType:'root',
     logo:'https://i.ibb.co/nMXQjf3N/IMG-20260905-232138-442.jpg',
+    joinLink:'https://t.me/Silentcheats_OFC',
     downloadLink:'https://t.me/Silentcheats_OFC',
     tag:'Popular',
     rating:4.8,
@@ -1119,6 +1258,7 @@ const panelsData = [
     badge:'Root',
     badgeType:'root',
     logo:'https://i.ibb.co/Ps5Lrgjv/IMG-20260728-104821-172.jpg',
+    joinLink:'https://t.me/+PZSUld7gW2I0Y2Q1',
     downloadLink:'https://t.me/+PZSUld7gW2I0Y2Q1',
     tag:'Premium',
     rating:4.9,
@@ -1136,6 +1276,7 @@ const panelsData = [
     badge:'Root ✅',
     badgeType:'root',
     logo:'https://i.ibb.co/27hfnzJS/IMG-20260727-200128-275.jpg',
+    joinLink:'https://t.me/RapidCoreOfficialChannel',
     downloadLink:'https://t.me/RapidCoreOfficialChannel',
     tag:'Hot',
     rating:4.8,
@@ -1152,6 +1293,7 @@ const panelsData = [
     badge:'Root ✅',
     badgeType:'root',
     logo:'https://i.ibb.co/G3k0SJcf/serve-upload-2.png',
+    joinLink:'https://t.me/BRMODSOfficialChannel',
     downloadLink:'https://t.me/BRMODSOfficialChannel',
     tag:'Best Value',
     rating:4.7,
@@ -1168,6 +1310,7 @@ const panelsData = [
     badge:'Root',
     badgeType:'root',
     logo:'https://i.ibb.co/0jHrCxrR/IMG-20260903-090315-565.jpg',
+    joinLink:'https://t.me/HexBlade_OFC',
     downloadLink:'https://t.me/HexBlade_OFC',
     tag:null,
     rating:4.6,
@@ -1184,6 +1327,7 @@ const panelsData = [
     badge:'Root',
     badgeType:'root',
     logo:'https://i.ibb.co/q3TNqXfD/unseen-mods-logo.jpg',
+    joinLink:'https://t.me/UnseenMods_OFC',
     downloadLink:'https://t.me/UnseenMods_OFC',
     tag:null,
     rating:4.7,
@@ -1200,6 +1344,7 @@ const panelsData = [
     badge:'Root',
     badgeType:'root',
     logo:'https://i.ibb.co/BKNj5CmZ/1788704117076.png',
+    joinLink:'https://t.me/CrackMaster_OFC',
     downloadLink:'https://t.me/CrackMaster_OFC',
     tag:'Best Value',
     rating:4.8,
@@ -1216,6 +1361,7 @@ const panelsData = [
     badge:'Non Root ✅',
     badgeType:'nonroot',
     logo:'https://i.ibb.co/ynFxxJwv/1788707334391.png',
+    joinLink:'https://t.me/DripWire_OFC',
     downloadLink:'https://t.me/DripWire_OFC',
     tag:null,
     rating:4.6,
@@ -1232,6 +1378,7 @@ const panelsData = [
     badge:'Non Root',
     badgeType:'nonroot',
     logo:'https://i.ibb.co/9HkVMRHW/IMG-20260906-203508-084.jpg',
+    joinLink:'https://t.me/Buy_ABCD_Official',
     downloadLink:'https://t.me/Buy_ABCD_Official',
     tag:'New',
     rating:4.7,
@@ -1253,7 +1400,7 @@ const panelsData = [
     setTimeout(()=>{ pre.style.display='none'; }, 700);
   }
   window.addEventListener('load', ()=> setTimeout(hide, 700));
-  setTimeout(hide, 3500); // safety fallback
+  setTimeout(hide, 3500);
 })();
 
 /* ---------- PARTICLE BACKGROUND ---------- */
@@ -1408,6 +1555,9 @@ function render(list){
     const ic = p.badgeType==='root' ? 'check-circle' : p.badgeType==='pro' ? 'star' : 'circle';
     const typeLabel = p.badgeType==='root' ? 'Root' : p.badgeType==='pro' ? 'Pro' : 'Non-Root';
 
+    // Per-panel join link (falls back to downloadLink)
+    const joinHref = p.joinLink || p.downloadLink;
+
     let ph = '';
     p.plans.forEach(pl=>{
       ph += '<div class="price-card">'
@@ -1444,6 +1594,10 @@ function render(list){
       +         tagHtml + ratingHtml
       +       '</div>'
       +     '</div>'
+      +     '<a class="panel-join-btn" href="'+esc(joinHref)+'" target="_blank" rel="noopener" '
+      +        'aria-label="Join '+esc(p.name)+' on Telegram" title="Join '+esc(p.name)+' channel">'
+      +       '<i class="fab fa-telegram-plane"></i> Join'
+      +     '</a>'
       +   '</div>'
       +   '<div class="pricing-grid">'+ph+'</div>'
       + '</section>';
@@ -1647,7 +1801,7 @@ function copyDone(){
 
 /* ---------- READY ---------- */
 console.log('%c👑 God Sunil Panel Store','color:#00f5d4;font-weight:800;font-size:14px');
-console.log('%c'+panelsData.length+' panels loaded · gaming edition','color:#8892a8;font-size:11px');
+console.log('%c'+panelsData.length+' panels loaded · per-panel Join buttons enabled','color:#8892a8;font-size:11px');
 </script>
 </body>
 </html>
