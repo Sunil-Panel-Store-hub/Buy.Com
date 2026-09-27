@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0b0e14">
-<meta name="description" content="God Sunil Panel Store — Premium gaming panels, Root & Non-Root. Instant delivery, 24/7 support, trusted since 2024.">
-<title>God Sunil Panel Store — Premium Gaming Panels</title>
+<meta name="description" content="God Sunil Panel Store — Premium gaming panels. INR (UPI) & USDT (Binance Pay) accepted.">
+<title>God Sunil Panel Store — INR &amp; USDT Gaming Panels</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='88'>👑</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,6 +26,9 @@
   --red:#f87171;
   --tg:#2AABEE;
   --tg-d:#229ED9;
+  --binance:#F0B90B;
+  --binance-d:#d9a600;
+  --rupee:#22c55e;
   --text:#e8edf5;
   --text-2:#b0bedb;
   --muted:#8892a8;
@@ -50,15 +53,14 @@ a{color:inherit}
 ::-webkit-scrollbar{width:8px;height:8px}
 ::-webkit-scrollbar-track{background:#0f141c}
 ::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--teal),var(--teal-d));border-radius:8px}
-::-webkit-scrollbar-thumb:hover{background:var(--teal)}
 ::selection{background:rgba(0,245,212,.28);color:#fff}
 
-/* ============ BACKGROUND LAYERS ============ */
+/* ============ BACKGROUND ============ */
 #bgCanvas{
   position:fixed;inset:0;width:100%;height:100%;z-index:-2;pointer-events:none;
   background:
     radial-gradient(at 18% 12%, rgba(0,245,212,.075) 0%, transparent 55%),
-    radial-gradient(at 82% 88%, rgba(255,179,71,.055) 0%, transparent 55%),
+    radial-gradient(at 82% 88%, rgba(240,185,11,.05) 0%, transparent 55%),
     radial-gradient(at 55% 45%, rgba(167,139,250,.045) 0%, transparent 60%),
     var(--bg);
 }
@@ -75,13 +77,10 @@ a{color:inherit}
   position:fixed;inset:0;z-index:-1;pointer-events:none;
   background:radial-gradient(ellipse at 50% 40%, transparent 40%, rgba(0,0,0,.55) 100%);
 }
-
-/* ============ CURSOR GLOW ============ */
 #cursorGlow{
   position:fixed;width:420px;height:420px;border-radius:50%;pointer-events:none;z-index:0;
   background:radial-gradient(circle, rgba(0,245,212,.085) 0%, transparent 65%);
   transform:translate(-50%,-50%);transition:opacity .4s;opacity:0;
-  will-change:transform;
 }
 @media (hover:hover) and (pointer:fine){ #cursorGlow{opacity:1} }
 @media (hover:none), (pointer:coarse){ #cursorGlow{display:none} }
@@ -108,7 +107,7 @@ a{color:inherit}
 }
 .pre-bar::after{
   content:'';position:absolute;inset:0;width:40%;border-radius:99px;
-  background:linear-gradient(90deg,transparent,var(--teal),var(--gold));
+  background:linear-gradient(90deg,transparent,var(--teal),var(--binance));
   animation:preSlide 1.1s ease-in-out infinite;
 }
 @keyframes preSlide{0%{transform:translateX(-100%)}100%{transform:translateX(350%)}}
@@ -132,7 +131,7 @@ a{color:inherit}
 .nav-brand i{font-size:1.5rem;color:var(--teal);filter:drop-shadow(0 0 12px rgba(0,245,212,.5))}
 .nav-brand span{
   font-family:'Orbitron',sans-serif;font-weight:800;font-size:.92rem;letter-spacing:.6px;
-  background:linear-gradient(135deg,var(--teal),var(--gold));
+  background:linear-gradient(135deg,var(--teal),var(--binance));
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
   white-space:nowrap;
 }
@@ -145,11 +144,11 @@ a{color:inherit}
 .nav-cta{
   display:inline-flex;align-items:center;gap:.45rem;text-decoration:none;
   font-size:.78rem;font-weight:700;padding:.5rem 1.1rem;border-radius:99px;
-  background:linear-gradient(135deg,#0088cc,#006699);color:#fff;
-  box-shadow:0 4px 18px rgba(0,136,204,.3);
+  background:linear-gradient(135deg,var(--tg),var(--tg-d));color:#fff;
+  box-shadow:0 4px 18px rgba(42,171,238,.3);
   transition:transform .2s, box-shadow .25s;white-space:nowrap;
 }
-.nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 26px rgba(0,136,204,.45)}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 26px rgba(42,171,238,.45)}
 
 /* ============ LAYOUT ============ */
 .container{max-width:1440px;margin:0 auto;padding:0 1.4rem}
@@ -157,7 +156,7 @@ main{padding-top:var(--nav-h)}
 
 /* ============ HERO ============ */
 .hero{
-  text-align:center;padding:3.6rem 1rem 3rem;position:relative;
+  text-align:center;padding:3.4rem 1rem 2.6rem;position:relative;
   animation:heroIn .8s cubic-bezier(.2,.8,.2,1) both;
 }
 @keyframes heroIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
@@ -179,12 +178,12 @@ main{padding-top:var(--nav-h)}
   margin-bottom:.9rem;
 }
 .hero-title span{
-  background:linear-gradient(135deg,var(--teal) 0%,var(--teal-d) 35%,var(--gold) 100%);
+  background:linear-gradient(135deg,var(--teal) 0%,var(--teal-d) 35%,var(--binance) 100%);
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
   display:inline-block;
 }
 .hero-sub{
-  font-size:clamp(.85rem,1.7vw,1rem);color:var(--muted);max-width:600px;margin:0 auto 2.2rem;
+  font-size:clamp(.85rem,1.7vw,1rem);color:var(--muted);max-width:640px;margin:0 auto 2rem;
   line-height:1.65;
 }
 .hero-sub i{color:var(--teal);margin:0 3px}
@@ -202,13 +201,14 @@ main{padding-top:var(--nav-h)}
   font-size:clamp(1rem,2.4vw,1.35rem);color:var(--teal);letter-spacing:-.3px;
   text-shadow:0 0 22px rgba(0,245,212,.35);
 }
+.stat:nth-child(4) b{color:var(--binance);text-shadow:0 0 22px rgba(240,185,11,.4)}
 .stat span{display:block;font-size:.63rem;color:var(--muted);text-transform:uppercase;letter-spacing:.9px;margin-top:.28rem;font-weight:600}
 
-/* ============ TELEGRAM JOIN CARD (HERO) ============ */
+/* ============ TELEGRAM JOIN CARD ============ */
 .tg-join-card{
   position:relative;overflow:hidden;
   display:flex;align-items:center;gap:.9rem;
-  max-width:540px;margin:2.2rem auto 0;
+  max-width:540px;margin:2rem auto 0;
   padding:.85rem 1rem;
   text-decoration:none;
   background:linear-gradient(135deg, rgba(42,171,238,.16), rgba(42,171,238,.04) 60%, rgba(0,245,212,.06));
@@ -229,7 +229,6 @@ main{padding-top:var(--nav-h)}
   box-shadow:0 22px 60px rgba(0,0,0,.55), 0 0 60px rgba(42,171,238,.25);
 }
 .tg-join-card:hover::after{left:150%}
-
 .tg-avatar{
   position:relative;flex-shrink:0;
   width:56px;height:56px;border-radius:50%;overflow:hidden;
@@ -244,7 +243,6 @@ main{padding-top:var(--nav-h)}
   animation:tgRing 2.6s ease-out infinite;pointer-events:none;
 }
 @keyframes tgRing{0%{transform:scale(.9);opacity:.8}100%{transform:scale(1.35);opacity:0}}
-
 .tg-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:.22rem;text-align:left}
 .tg-name{
   font-family:'Orbitron',sans-serif;font-weight:700;font-size:.92rem;letter-spacing:-.1px;
@@ -273,6 +271,129 @@ main{padding-top:var(--nav-h)}
   box-shadow:0 10px 32px rgba(42,171,238,.62);
 }
 
+/* ============ CURRENCY SWITCHER ============ */
+.currency-switch{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1rem;
+  max-width:660px;
+  margin:0 auto 1.4rem;
+  position:relative;
+  z-index:2;
+}
+.currency-btn{
+  position:relative;overflow:hidden;
+  padding:1.05rem 1.15rem;
+  border-radius:20px;
+  background:rgba(20,28,40,.6);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1.5px solid var(--line);
+  color:var(--text);
+  cursor:pointer;
+  transition:all .3s cubic-bezier(.2,.8,.2,1);
+  display:flex;align-items:center;gap:.85rem;
+  text-align:left;font-family:inherit;
+}
+.currency-btn::after{
+  content:'';position:absolute;top:0;left:-130%;width:55%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.14),transparent);
+  transform:skewX(-22deg);transition:left .7s ease;pointer-events:none;
+}
+.currency-btn:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.16)}
+.currency-btn:hover::after{left:150%}
+.currency-btn.active[data-currency="inr"]{
+  border-color:rgba(34,197,94,.55);
+  background:linear-gradient(135deg, rgba(34,197,94,.16), rgba(34,197,94,.03));
+  box-shadow:0 18px 48px rgba(0,0,0,.45), 0 0 48px rgba(34,197,94,.22);
+}
+.currency-btn.active[data-currency="usdt"]{
+  border-color:rgba(240,185,11,.6);
+  background:linear-gradient(135deg, rgba(240,185,11,.18), rgba(240,185,11,.03));
+  box-shadow:0 18px 48px rgba(0,0,0,.45), 0 0 48px rgba(240,185,11,.24);
+}
+.currency-icon{
+  width:52px;height:52px;border-radius:15px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;font-weight:800;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.07);
+  flex-shrink:0;
+  transition:all .3s;
+}
+.currency-btn.active[data-currency="inr"] .currency-icon{
+  background:linear-gradient(135deg,var(--rupee),#16a34a);
+  border-color:transparent;
+  color:#fff;
+  box-shadow:0 0 26px rgba(34,197,94,.55);
+}
+.currency-btn.active[data-currency="usdt"] .currency-icon{
+  background:linear-gradient(135deg,var(--binance),var(--binance-d));
+  border-color:transparent;
+  color:#0b0e14;
+  box-shadow:0 0 26px rgba(240,185,11,.6);
+}
+.currency-meta{display:flex;flex-direction:column;gap:.15rem;min-width:0}
+.currency-title{
+  font-family:'Orbitron',sans-serif;font-weight:800;
+  font-size:.95rem;letter-spacing:-.1px;color:var(--text);
+  transition:color .3s;
+}
+.currency-btn.active[data-currency="inr"] .currency-title{color:#4ade80}
+.currency-btn.active[data-currency="usdt"] .currency-title{color:var(--binance)}
+.currency-sub{
+  font-size:.7rem;color:var(--muted);font-weight:600;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+
+/* ============ STORE SECTION HEADER ============ */
+.store-section-header{
+  display:flex;align-items:center;gap:1rem;
+  max-width:660px;
+  margin:0 auto 2rem;
+  padding:1rem 1.3rem;
+  border-radius:18px;
+  background:rgba(20,28,40,.6);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid var(--line);
+  position:relative;
+  overflow:hidden;
+  animation:ssIn .45s cubic-bezier(.2,.8,.2,1) both;
+}
+@keyframes ssIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.store-section-header::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:4px;
+  transition:background .3s;
+}
+.store-section-header.inr{border-color:rgba(34,197,94,.28)}
+.store-section-header.inr::before{background:linear-gradient(180deg,var(--rupee),#16a34a)}
+.store-section-header.usdt{border-color:rgba(240,185,11,.3)}
+.store-section-header.usdt::before{background:linear-gradient(180deg,var(--binance),var(--binance-d))}
+
+.sst-flag{
+  width:46px;height:46px;border-radius:12px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--line);
+}
+.store-section-header.inr .sst-flag{
+  background:rgba(34,197,94,.1);
+  border-color:rgba(34,197,94,.28);
+}
+.store-section-header.usdt .sst-flag{
+  background:rgba(240,185,11,.1);
+  border-color:rgba(240,185,11,.32);
+  color:var(--binance);font-family:'Orbitron',sans-serif;font-weight:900;font-size:1.2rem;
+}
+.sst-info{flex:1;min-width:0;text-align:left}
+.sst-title{
+  font-family:'Orbitron',sans-serif;font-weight:800;
+  font-size:.92rem;letter-spacing:.2px;margin-bottom:.15rem;
+}
+.store-section-header.inr .sst-title{color:#4ade80}
+.store-section-header.usdt .sst-title{color:var(--binance)}
+.sst-desc{font-size:.73rem;color:var(--muted);font-weight:600;line-height:1.45}
+
 /* ============ SECTION TITLES ============ */
 .sec-title{
   font-family:'Orbitron',sans-serif;font-weight:800;text-align:center;
@@ -286,7 +407,7 @@ main{padding-top:var(--nav-h)}
   background:rgba(11,14,20,.86);
   backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
   border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  padding:.85rem 0;margin-bottom:2.2rem;
+  padding:.85rem 0;margin-bottom:1.8rem;
 }
 .toolbar-inner{
   max-width:1440px;margin:0 auto;padding:0 1.4rem;
@@ -317,7 +438,6 @@ main{padding-top:var(--nav-h)}
 }
 .search-clear:hover{color:var(--teal);background:rgba(0,245,212,.1)}
 .search-clear.show{display:flex}
-
 .filter-tabs{display:flex;gap:.35rem;background:rgba(20,28,40,.6);padding:.3rem;border-radius:99px;border:1px solid var(--line)}
 .filter-tab{
   border:none;background:transparent;color:var(--muted);
@@ -328,7 +448,6 @@ main{padding-top:var(--nav-h)}
 .filter-tab.active{background:linear-gradient(135deg,var(--teal),var(--teal-d));color:#0b0e14;box-shadow:0 4px 14px rgba(0,245,212,.25)}
 .filter-tab.active[data-filter="nonroot"]{background:linear-gradient(135deg,var(--gold),var(--gold-d));box-shadow:0 4px 14px rgba(255,179,71,.25)}
 .filter-tab.active[data-filter="pro"]{background:linear-gradient(135deg,var(--purple),var(--purple-d));box-shadow:0 4px 14px rgba(167,139,250,.25);color:#fff}
-
 .sort-wrap{position:relative}
 #sortSelect{
   appearance:none;-webkit-appearance:none;
@@ -357,12 +476,12 @@ main{padding-top:var(--nav-h)}
   box-shadow:var(--shadow), inset 0 1px 0 rgba(255,255,255,.04);
   transition:border-color .3s, box-shadow .35s, transform .35s;
   animation:cardIn .55s cubic-bezier(.2,.8,.2,1) both;
-  animation-delay:calc(var(--i, 0) * 45ms);
+  animation-delay:calc(var(--i, 0) * 40ms);
 }
 @keyframes cardIn{from{opacity:0;transform:translateY(24px) scale(.985)}to{opacity:1;transform:none}}
 .panel-section::before{
   content:'';position:absolute;top:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(0,245,212,.5),rgba(255,179,71,.3),transparent);
+  background:linear-gradient(90deg,transparent,rgba(0,245,212,.5),rgba(240,185,11,.35),transparent);
   opacity:0;transition:opacity .35s;
 }
 .panel-section:hover{
@@ -377,7 +496,6 @@ main{padding-top:var(--nav-h)}
   background:radial-gradient(circle, rgba(0,245,212,.13) 0%, transparent 70%);
 }
 .panel-section:hover .panel-glow{opacity:1}
-
 .panel-header{
   display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap;
   margin-bottom:1.6rem;position:relative;z-index:1;
@@ -401,7 +519,6 @@ main{padding-top:var(--nav-h)}
 }
 .panel-section:hover .panel-logo-wrap::after{opacity:1}
 @keyframes spinSlow{to{transform:rotate(360deg)}}
-
 .panel-meta{flex:1;min-width:150px}
 .panel-name{
   font-family:'Orbitron',sans-serif;font-weight:700;font-size:1.16rem;
@@ -418,7 +535,6 @@ main{padding-top:var(--nav-h)}
 .badge-root{color:var(--teal);border-color:rgba(0,245,212,.32);background:rgba(0,245,212,.08);box-shadow:0 0 18px rgba(0,245,212,.08)}
 .badge-nonroot{color:var(--gold);border-color:rgba(255,179,71,.32);background:rgba(255,179,71,.08);box-shadow:0 0 18px rgba(255,179,71,.08)}
 .badge-pro{color:var(--purple);border-color:rgba(167,139,250,.32);background:rgba(167,139,250,.08);box-shadow:0 0 18px rgba(167,139,250,.08)}
-
 .panel-tag{
   font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;
   padding:.28rem .7rem;border-radius:99px;color:#0b0e14;
@@ -428,7 +544,15 @@ main{padding-top:var(--nav-h)}
 .panel-tag.tag-new{background:linear-gradient(135deg,var(--purple),var(--purple-d));color:#fff;box-shadow:0 0 18px rgba(167,139,250,.3)}
 .panel-tag.tag-hot{background:linear-gradient(135deg,#ff5e62,#f0364a);color:#fff;box-shadow:0 0 18px rgba(240,54,74,.3)}
 .panel-tag.tag-premium{background:linear-gradient(135deg,#e5e7eb,#9ca3af);color:#0b0e14;box-shadow:0 0 18px rgba(229,231,235,.2)}
-
+.offer-badge{
+  display:inline-flex;align-items:center;gap:.3rem;
+  font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;
+  padding:.28rem .7rem;border-radius:99px;
+  background:linear-gradient(135deg,#ff5e62,#f0364a);color:#fff;
+  box-shadow:0 0 18px rgba(240,54,74,.4);
+  animation:offerPulse 2.2s ease-in-out infinite;
+}
+@keyframes offerPulse{0%,100%{box-shadow:0 0 18px rgba(240,54,74,.4)}50%{box-shadow:0 0 28px rgba(240,54,74,.65)}}
 .panel-rating{
   display:inline-flex;align-items:center;gap:.3rem;
   font-size:.68rem;font-weight:700;color:var(--text-2);
@@ -437,7 +561,7 @@ main{padding-top:var(--nav-h)}
 }
 .panel-rating i{color:var(--gold);font-size:.6rem}
 
-/* ============ PANEL-LEVEL JOIN BUTTON ============ */
+/* ============ PANEL JOIN BUTTON ============ */
 .panel-join-btn{
   position:relative;overflow:hidden;flex-shrink:0;
   display:inline-flex;align-items:center;gap:.45rem;
@@ -477,25 +601,45 @@ main{padding-top:var(--nav-h)}
 }
 .price-card::before{
   content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;
-  background:linear-gradient(160deg, rgba(0,245,212,.07), transparent 45%);
+  background:linear-gradient(160deg, rgba(240,185,11,.07), transparent 45%);
   opacity:0;transition:opacity .3s;
 }
 .price-card:hover{
   transform:translateY(-5px);
-  border-color:rgba(0,245,212,.28);
+  border-color:rgba(240,185,11,.32);
   background:rgba(15,20,29,.85);
-  box-shadow:0 16px 40px rgba(0,0,0,.5), 0 0 34px rgba(0,245,212,.07);
+  box-shadow:0 16px 40px rgba(0,0,0,.5), 0 0 34px rgba(240,185,11,.09);
 }
 .price-card:hover::before{opacity:1}
+/* INR-mode price card hover */
+body.mode-inr .price-card::before{
+  background:linear-gradient(160deg, rgba(34,197,94,.08), transparent 45%);
+}
+body.mode-inr .price-card:hover{
+  border-color:rgba(34,197,94,.35);
+  box-shadow:0 16px 40px rgba(0,0,0,.5), 0 0 34px rgba(34,197,94,.1);
+}
 .price-card .duration{
   font-size:.82rem;font-weight:600;color:var(--text-2);
   display:flex;align-items:center;gap:.35rem;letter-spacing:.1px;
 }
 .price-card .duration i{color:var(--teal);font-size:.7rem}
+body.mode-inr .price-card .duration i{color:var(--rupee)}
 .price-card .price{
   font-family:'Orbitron',sans-serif;font-weight:800;
   font-size:1.3rem;color:#f4f8ff;letter-spacing:-.4px;line-height:1.2;
-  text-shadow:0 0 22px rgba(0,245,212,.2);
+  text-shadow:0 0 22px rgba(240,185,11,.28);
+}
+body.mode-inr .price-card .price{
+  color:#f4f8ff;
+  text-shadow:0 0 22px rgba(34,197,94,.35);
+}
+.price-card .price small{
+  font-size:.5em;font-weight:800;color:var(--binance);
+  letter-spacing:.5px;margin-left:.15rem;
+}
+body.mode-inr .price-card .price small{
+  color:#4ade80;
 }
 .badge-mini{
   font-size:.5rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;
@@ -512,16 +656,18 @@ main{padding-top:var(--nav-h)}
   width:100%;padding:.55rem .8rem;margin-top:.25rem;
   font-size:.76rem;font-weight:800;letter-spacing:.2px;
   border:none;border-radius:99px;cursor:pointer;
-  background:linear-gradient(135deg,var(--teal),var(--teal-d));color:#0b0e14;
-  box-shadow:0 4px 16px rgba(0,245,212,.22);
+  background:linear-gradient(135deg,var(--binance),var(--binance-d));color:#0b0e14;
+  box-shadow:0 4px 16px rgba(240,185,11,.28);
   transition:transform .18s, box-shadow .25s, filter .2s;
 }
-.btn-buy:hover{transform:translateY(-1px) scale(1.025);box-shadow:0 8px 26px rgba(0,245,212,.4);filter:brightness(1.08)}
+body.mode-inr .btn-buy{
+  background:linear-gradient(135deg,var(--rupee),#16a34a);color:#fff;
+  box-shadow:0 4px 16px rgba(34,197,94,.32);
+}
+.btn-buy:hover{transform:translateY(-1px) scale(1.025);filter:brightness(1.1)}
+body.mode-inr .btn-buy:hover{box-shadow:0 8px 26px rgba(34,197,94,.55)}
+body.mode-usdt .btn-buy:hover{box-shadow:0 8px 26px rgba(240,185,11,.5)}
 .btn-buy:active{transform:scale(.97)}
-.btn-buy.gold{background:linear-gradient(135deg,var(--gold),var(--gold-d));box-shadow:0 4px 16px rgba(255,179,71,.22)}
-.btn-buy.gold:hover{box-shadow:0 8px 26px rgba(255,179,71,.42)}
-.btn-buy.purple{background:linear-gradient(135deg,var(--purple),var(--purple-d));color:#fff;box-shadow:0 4px 16px rgba(167,139,250,.22)}
-.btn-buy.purple:hover{box-shadow:0 8px 26px rgba(167,139,250,.42)}
 .btn-buy::after{
   content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;
   background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);
@@ -563,9 +709,9 @@ main{padding-top:var(--nav-h)}
   background:rgba(0,245,212,.08);border:1px solid rgba(0,245,212,.18);color:var(--teal);
   box-shadow:0 0 26px rgba(0,245,212,.1);
 }
-.trust-card:nth-child(2) .trust-icon{background:rgba(255,179,71,.08);border-color:rgba(255,179,71,.2);color:var(--gold);box-shadow:0 0 26px rgba(255,179,71,.1)}
+.trust-card:nth-child(2) .trust-icon{background:rgba(34,197,94,.08);border-color:rgba(34,197,94,.2);color:var(--rupee);box-shadow:0 0 26px rgba(34,197,94,.1)}
 .trust-card:nth-child(3) .trust-icon{background:rgba(167,139,250,.08);border-color:rgba(167,139,250,.2);color:var(--purple);box-shadow:0 0 26px rgba(167,139,250,.1)}
-.trust-card:nth-child(4) .trust-icon{background:rgba(74,222,128,.08);border-color:rgba(74,222,128,.2);color:var(--green);box-shadow:0 0 26px rgba(74,222,128,.1)}
+.trust-card:nth-child(4) .trust-icon{background:rgba(240,185,11,.08);border-color:rgba(240,185,11,.22);color:var(--binance);box-shadow:0 0 26px rgba(240,185,11,.1)}
 .trust-card h3{font-size:.95rem;font-weight:700;margin-bottom:.4rem;color:#f0f4ff}
 .trust-card p{font-size:.78rem;color:var(--muted);line-height:1.6}
 
@@ -603,7 +749,7 @@ footer{
 .foot-inner{max-width:1440px;margin:0 auto;padding:0 1.4rem;text-align:center}
 .foot-brand{
   font-family:'Orbitron',sans-serif;font-weight:800;font-size:1rem;letter-spacing:1px;
-  background:linear-gradient(135deg,var(--teal),var(--gold));
+  background:linear-gradient(135deg,var(--teal),var(--binance));
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
   margin-bottom:.55rem;
 }
@@ -616,25 +762,25 @@ footer{
   transition:all .22s;display:inline-flex;align-items:center;gap:.4rem;
 }
 .foot-links a:hover{color:var(--teal);border-color:rgba(0,245,212,.3);background:rgba(0,245,212,.07);transform:translateY(-2px)}
-.foot-note{font-size:.68rem;color:#4a5a6a;line-height:1.7;max-width:640px;margin:0 auto}
+.foot-note{font-size:.68rem;color:#4a5a6a;line-height:1.7;max-width:680px;margin:0 auto}
 .foot-note i{color:var(--teal);margin-right:.25rem}
 
-/* ============ FAB + BACK TO TOP ============ */
+/* ============ FAB & BACK TO TOP ============ */
 .fab{
   position:fixed;bottom:1.6rem;right:1.6rem;z-index:950;
   display:flex;align-items:center;justify-content:center;
   width:58px;height:58px;border-radius:50%;
-  background:linear-gradient(135deg,var(--teal),var(--teal-d));color:#0b0e14;
+  background:linear-gradient(135deg,var(--tg),var(--tg-d));color:#fff;
   font-size:1.55rem;border:none;text-decoration:none;
-  box-shadow:0 8px 32px rgba(0,245,212,.35);
+  box-shadow:0 8px 32px rgba(42,171,238,.45);
   transition:transform .25s, box-shadow .3s;
 }
 .fab::after{
   content:'';position:absolute;inset:0;border-radius:50%;
-  border:2px solid rgba(0,245,212,.45);animation:ripple 2.6s ease-out infinite;
+  border:2px solid rgba(42,171,238,.5);animation:ripple 2.6s ease-out infinite;
 }
 @keyframes ripple{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.55);opacity:0}}
-.fab:hover{transform:scale(1.09) rotate(-6deg);box-shadow:0 14px 46px rgba(0,245,212,.55)}
+.fab:hover{transform:scale(1.09) rotate(-6deg);box-shadow:0 14px 46px rgba(42,171,238,.65)}
 .fab .tooltip{
   position:absolute;right:72px;
   background:rgba(11,14,20,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
@@ -642,11 +788,10 @@ footer{
   font-size:.73rem;font-weight:600;white-space:nowrap;
   border:1px solid var(--line);
   opacity:0;pointer-events:none;transform:translateX(8px);
-  transition:opacity .25s, transform .25s;letter-spacing:.2px;
+  transition:opacity .25s, transform .25s;
 }
-.fab .tooltip i{color:var(--teal);margin-right:.32rem}
+.fab .tooltip i{color:var(--tg);margin-right:.32rem}
 .fab:hover .tooltip{opacity:1;transform:translateX(0)}
-
 #backTop{
   position:fixed;bottom:1.6rem;left:1.6rem;z-index:950;
   width:44px;height:44px;border-radius:50%;
@@ -680,6 +825,10 @@ footer{
 .toast.error i{color:var(--red)}
 .toast.info{border-color:rgba(255,179,71,.3)}
 .toast.info i{color:var(--gold)}
+.toast.binance{border-color:rgba(240,185,11,.3)}
+.toast.binance i{color:var(--binance)}
+.toast.rupee{border-color:rgba(34,197,94,.3)}
+.toast.rupee i{color:var(--rupee)}
 @keyframes toastIn{from{opacity:0;transform:translateX(40px) scale(.95)}to{opacity:1;transform:none}}
 @keyframes toastOut{to{opacity:0;transform:translateX(40px) scale(.95)}}
 
@@ -697,7 +846,7 @@ footer{
   background:rgba(18,26,38,.97);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
   border:1px solid rgba(255,255,255,.07);border-radius:30px;
   padding:1.9rem 1.7rem 2rem;
-  box-shadow:0 40px 110px rgba(0,0,0,.75), 0 0 70px rgba(0,245,212,.06);
+  box-shadow:0 40px 110px rgba(0,0,0,.75);
   animation:modalPop .38s cubic-bezier(.2,.8,.2,1) both;
 }
 @keyframes modalPop{from{opacity:0;transform:translateY(20px) scale(.95)}to{opacity:1;transform:none}}
@@ -712,43 +861,81 @@ footer{
 }
 .modal-close:hover{background:rgba(248,113,113,.14);color:var(--red);transform:rotate(90deg)}
 .modal-icon{
-  text-align:center;font-size:2.3rem;color:var(--teal);margin-bottom:.35rem;
-  filter:drop-shadow(0 0 22px rgba(0,245,212,.45));
+  text-align:center;font-size:2.3rem;color:var(--binance);margin-bottom:.35rem;
+  filter:drop-shadow(0 0 22px rgba(240,185,11,.45));
+  transition:color .3s, filter .3s;
 }
+.modal.rupee .modal-icon{color:var(--rupee);filter:drop-shadow(0 0 22px rgba(34,197,94,.45))}
 .modal-title{
   text-align:center;font-family:'Orbitron',sans-serif;font-weight:700;
   font-size:1.1rem;color:#f2f6ff;letter-spacing:-.2px;margin-bottom:.3rem;line-height:1.3;
 }
-.modal-sub{text-align:center;font-size:.85rem;color:var(--muted);margin-bottom:1.3rem}
+.modal-sub{text-align:center;font-size:.85rem;color:var(--muted);margin-bottom:1.1rem}
 .modal-sub strong{color:var(--teal);font-weight:700}
-
-.stepper{display:flex;align-items:center;justify-content:center;gap:.4rem;margin-bottom:1.4rem}
+.stepper{display:flex;align-items:center;justify-content:center;gap:.4rem;margin-bottom:1.2rem}
 .step{display:flex;align-items:center;gap:.45rem;font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
 .step .num{
   width:23px;height:23px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
   font-size:.66rem;background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--muted);
 }
-.step.on .num{background:linear-gradient(135deg,var(--teal),var(--teal-d));color:#0b0e14;border-color:transparent;box-shadow:0 0 16px rgba(0,245,212,.35)}
+.step.on .num{background:linear-gradient(135deg,var(--binance),var(--binance-d));color:#0b0e14;border-color:transparent;box-shadow:0 0 16px rgba(240,185,11,.45)}
+.modal.rupee .step.on .num{background:linear-gradient(135deg,var(--rupee),#16a34a);color:#fff;box-shadow:0 0 16px rgba(34,197,94,.45)}
 .step.on{color:var(--text-2)}
 .step-line{width:26px;height:1px;background:var(--line);flex-shrink:0}
-
 .modal-amount{
-  display:flex;align-items:center;justify-content:space-between;
-  background:linear-gradient(135deg, rgba(0,245,212,.09), rgba(0,245,212,.02));
-  border:1px solid rgba(0,245,212,.2);border-radius:16px;
+  display:flex;align-items:center;justify-content:space-between;gap:.8rem;
+  background:linear-gradient(135deg, rgba(240,185,11,.1), rgba(240,185,11,.02));
+  border:1px solid rgba(240,185,11,.25);border-radius:16px;
   padding:.85rem 1.15rem;margin-bottom:1rem;
+  transition:background .3s, border-color .3s;
 }
-.modal-amount .lbl{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.9px;color:var(--muted)}
-.modal-amount .val{font-family:'Orbitron',sans-serif;font-weight:900;font-size:1.45rem;color:var(--teal);letter-spacing:-.5px;text-shadow:0 0 24px rgba(0,245,212,.4)}
-
+.modal.rupee .modal-amount{
+  background:linear-gradient(135deg, rgba(34,197,94,.12), rgba(34,197,94,.02));
+  border-color:rgba(34,197,94,.3);
+}
+.modal-amount .lbl{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.9px;color:var(--muted);display:block}
+.modal-amount .sub-amt{font-size:.7rem;color:var(--muted);font-weight:600;display:block;margin-top:.15rem}
+.modal-amount .val{
+  font-family:'Orbitron',sans-serif;font-weight:900;font-size:1.5rem;
+  color:var(--binance);letter-spacing:-.5px;text-shadow:0 0 24px rgba(240,185,11,.5);
+  display:flex;align-items:baseline;gap:.25rem;
+}
+.modal.rupee .modal-amount .val{color:var(--rupee);text-shadow:0 0 24px rgba(34,197,94,.5)}
+.modal-amount .val small{font-size:.5em;font-weight:800;letter-spacing:.6px;opacity:.85}
+.pay-tabs{
+  display:flex;gap:.35rem;background:rgba(20,28,40,.75);
+  padding:.32rem;border-radius:99px;border:1px solid var(--line);
+  margin-bottom:1.1rem;
+}
+.pay-tab{
+  flex:1;display:flex;align-items:center;justify-content:center;gap:.45rem;
+  border:none;background:transparent;color:var(--muted);
+  font-size:.76rem;font-weight:800;padding:.55rem .8rem;border-radius:99px;
+  cursor:pointer;transition:all .22s;font-family:inherit;
+  white-space:nowrap;
+}
+.pay-tab:hover{color:var(--text-2)}
+.pay-tab.active[data-method="upi"]{
+  background:linear-gradient(135deg,var(--rupee),#16a34a);color:#fff;
+  box-shadow:0 4px 14px rgba(34,197,94,.4);
+}
+.pay-tab.active[data-method="binance"]{
+  background:linear-gradient(135deg,var(--binance),var(--binance-d));color:#0b0e14;
+  box-shadow:0 4px 14px rgba(240,185,11,.45);
+}
+.pay-panel{display:none}
+.pay-panel.active{display:block;animation:panelIn .3s ease}
+@keyframes panelIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .modal-upi{
   display:flex;align-items:center;justify-content:space-between;gap:.7rem;flex-wrap:wrap;
-  background:rgba(0,245,212,.035);border:1px solid rgba(0,245,212,.1);
+  background:rgba(34,197,94,.05);border:1px solid rgba(34,197,94,.16);
   border-radius:15px;padding:.85rem 1.1rem;margin-bottom:1rem;
 }
-.upi-label{font-size:.72rem;font-weight:700;color:var(--muted);display:flex;align-items:center;gap:.4rem;text-transform:uppercase;letter-spacing:.7px}
-.upi-label i{color:var(--teal)}
+.modal-upi.binance{background:rgba(240,185,11,.05);border-color:rgba(240,185,11,.2)}
+.upi-label{font-size:.7rem;font-weight:800;color:var(--muted);display:flex;align-items:center;gap:.4rem;text-transform:uppercase;letter-spacing:.7px}
+.upi-label i{color:var(--rupee)}
+.modal-upi.binance .upi-label i{color:var(--binance)}
 .upi-id{font-size:.95rem;font-weight:700;color:#f0f4ff;letter-spacing:.3px;word-break:break-all;font-family:'Inter',monospace}
 .btn-copy{
   display:inline-flex;align-items:center;gap:.4rem;
@@ -757,37 +944,39 @@ footer{
   font-size:.72rem;font-weight:700;cursor:pointer;flex-shrink:0;
   transition:background .2s, color .2s, border-color .2s, transform .15s;
 }
-.btn-copy:hover{background:rgba(0,245,212,.12);color:var(--teal);border-color:rgba(0,245,212,.3)}
+.btn-copy:hover{background:rgba(34,197,94,.14);color:var(--rupee);border-color:rgba(34,197,94,.3)}
+.modal-upi.binance .btn-copy:hover{background:rgba(240,185,11,.14);color:var(--binance);border-color:rgba(240,185,11,.35)}
 .btn-copy:active{transform:scale(.95)}
 .btn-copy.copied{background:rgba(74,222,128,.14);color:var(--green);border-color:rgba(74,222,128,.3)}
-
 .modal-qr{
   background:rgba(255,255,255,.025);border:1.5px dashed rgba(255,255,255,.08);
   border-radius:18px;padding:1rem;text-align:center;margin-bottom:1.2rem;
 }
-#qrCodeContainer{
+.modal-qr.binance{background:rgba(240,185,11,.03);border-color:rgba(240,185,11,.15)}
+#qrCodeContainer,#binanceQrContainer{
   display:flex;align-items:center;justify-content:center;
   width:100%;min-height:190px;background:#fff;border-radius:12px;padding:8px;
 }
-#qrCodeContainer img{max-width:100%;height:auto;border-radius:8px;display:block}
-#qrCodeContainer .qr-placeholder{font-size:2.6rem;color:#c8d2dc}
-.qr-text{font-size:.68rem;color:#4a5a6a;font-weight:600;margin-top:.65rem;letter-spacing:.3px}
-.qr-text i{color:var(--teal);margin-right:.25rem}
-
+#qrCodeContainer img,#binanceQrContainer img{max-width:100%;height:auto;border-radius:8px;display:block}
+#qrCodeContainer .qr-placeholder,#binanceQrContainer .qr-placeholder{font-size:2.6rem;color:#c8d2dc}
+.qr-text{font-size:.68rem;color:#4a5a6a;font-weight:700;margin-top:.65rem;letter-spacing:.3px}
+.qr-text i{color:var(--rupee);margin-right:.25rem}
+.modal-qr.binance .qr-text i{color:var(--binance)}
 .btn-telegram{
   display:flex;align-items:center;justify-content:center;gap:.65rem;
   width:100%;padding:.82rem;border:none;border-radius:99px;
-  background:linear-gradient(135deg,#0088cc,#006699);color:#fff;
+  background:linear-gradient(135deg,var(--tg),var(--tg-d));color:#fff;
   font-size:.92rem;font-weight:800;cursor:pointer;text-decoration:none;
-  box-shadow:0 5px 22px rgba(0,136,204,.3);
+  box-shadow:0 5px 22px rgba(42,171,238,.35);
   transition:transform .2s, box-shadow .3s, filter .2s;
 }
-.btn-telegram:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(0,136,204,.48);filter:brightness(1.1)}
+.btn-telegram:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(42,171,238,.55);filter:brightness(1.1)}
 .modal-note{
   margin-top:.85rem;text-align:center;font-size:.63rem;color:#4a5a6a;
   display:flex;align-items:center;justify-content:center;gap:.35rem;line-height:1.6;
 }
-.modal-note i{color:var(--teal)}
+.modal-note i{color:var(--binance)}
+.modal.rupee .modal-note i{color:var(--rupee)}
 
 /* ============ REVEAL ============ */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1)}
@@ -806,14 +995,23 @@ footer{
   .container{padding:0 1rem}
   .nav-inner{padding:0 1rem}
   .nav-brand span{font-size:.8rem}
-  .hero{padding:2.6rem .5rem 2.2rem}
+  .hero{padding:2.4rem .5rem 2rem}
   .hero-stats{grid-template-columns:repeat(2,1fr);gap:.6rem}
   .stat{padding:.85rem .5rem}
-  .tg-join-card{margin-top:1.8rem;gap:.7rem;padding:.75rem .85rem;border-radius:18px}
+  .tg-join-card{margin-top:1.6rem;gap:.7rem;padding:.75rem .85rem;border-radius:18px}
   .tg-avatar{width:48px;height:48px}
   .tg-name{font-size:.82rem}
   .tg-meta{font-size:.66rem}
   .tg-join-btn{padding:.52rem 1.05rem;font-size:.75rem}
+  .currency-switch{grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:1rem}
+  .currency-btn{padding:.85rem .85rem;gap:.6rem;border-radius:16px}
+  .currency-icon{width:42px;height:42px;font-size:1.2rem;border-radius:12px}
+  .currency-title{font-size:.82rem}
+  .currency-sub{font-size:.62rem}
+  .store-section-header{padding:.85rem 1rem;gap:.75rem;border-radius:15px;margin-bottom:1.5rem}
+  .sst-flag{width:40px;height:40px;font-size:1.25rem}
+  .sst-title{font-size:.82rem}
+  .sst-desc{font-size:.68rem}
   .toolbar{padding:.7rem 0}
   .toolbar-inner{padding:0 1rem;gap:.6rem}
   .search-wrap{min-width:100%;order:1}
@@ -825,10 +1023,7 @@ footer{
   .panel-logo{width:54px;height:54px}
   .panel-name{font-size:.98rem}
   .panel-badge{font-size:.58rem;padding:.22rem .62rem}
-  .panel-join-btn{
-    padding:.5rem 1rem;font-size:.72rem;
-    margin-left:0;
-  }
+  .panel-join-btn{padding:.5rem 1rem;font-size:.72rem;margin-left:0}
   .pricing-grid{grid-template-columns:repeat(2,1fr);gap:.6rem}
   .price-card{padding:.9rem .5rem .85rem;border-radius:14px}
   .price-card .price{font-size:1.05rem}
@@ -844,9 +1039,10 @@ footer{
   .toast{max-width:100%}
   .modal{padding:1.5rem 1.15rem 1.7rem;border-radius:24px}
   .modal-title{font-size:1rem}
-  .modal-amount .val{font-size:1.2rem}
-  #qrCodeContainer{min-height:155px}
+  .modal-amount .val{font-size:1.25rem}
+  #qrCodeContainer,#binanceQrContainer{min-height:155px}
   .step{font-size:.6rem}
+  .pay-tab{font-size:.7rem;padding:.5rem .55rem}
 }
 @media(max-width:420px){
   .hero-title{font-size:1.65rem}
@@ -855,6 +1051,14 @@ footer{
   .tg-name{font-size:.74rem}
   .tg-meta{font-size:.6rem}
   .tg-join-btn{padding:.46rem .8rem;font-size:.68rem;gap:.35rem}
+  .currency-btn{padding:.7rem .65rem;gap:.5rem;border-radius:14px}
+  .currency-icon{width:36px;height:36px;font-size:1rem;border-radius:10px}
+  .currency-title{font-size:.72rem}
+  .currency-sub{font-size:.56rem}
+  .store-section-header{padding:.7rem .85rem;gap:.6rem}
+  .sst-flag{width:34px;height:34px;font-size:1.05rem;border-radius:10px}
+  .sst-title{font-size:.75rem}
+  .sst-desc{font-size:.62rem}
   .pricing-grid{gap:.5rem}
   .price-card{padding:.75rem .3rem .7rem;border-radius:12px}
   .price-card .price{font-size:.95rem}
@@ -864,7 +1068,8 @@ footer{
   .panel-join-btn{padding:.45rem .85rem;font-size:.66rem;gap:.35rem}
   .stat b{font-size:1rem}
   .stat span{font-size:.56rem}
-  #qrCodeContainer{min-height:130px}
+  #qrCodeContainer,#binanceQrContainer{min-height:130px}
+  .pay-tab{font-size:.64rem;padding:.45rem .35rem;gap:.3rem}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
@@ -872,9 +1077,9 @@ footer{
 }
 </style>
 </head>
-<body class="locked">
+<body class="locked mode-inr">
 
-<!-- ===== PRELOADER ===== -->
+<!-- PRELOADER -->
 <div id="preloader">
   <div class="pre-crown"><i class="fas fa-crown"></i></div>
   <div class="pre-name">God Sunil Panel Store</div>
@@ -882,13 +1087,13 @@ footer{
   <div class="pre-tip">Loading Premium Panels</div>
 </div>
 
-<!-- ===== BACKGROUND ===== -->
+<!-- BACKGROUND -->
 <canvas id="bgCanvas"></canvas>
 <div id="gridOverlay"></div>
 <div id="vignette"></div>
 <div id="cursorGlow"></div>
 
-<!-- ===== NAVBAR ===== -->
+<!-- NAVBAR -->
 <header class="navbar" id="navbar">
   <div class="nav-inner">
     <a href="#top" class="nav-brand">
@@ -896,6 +1101,7 @@ footer{
       <span>GOD SUNIL STORE</span>
     </a>
     <nav class="nav-links">
+      <a href="#currency">Store</a>
       <a href="#panels">Panels</a>
       <a href="#why">Why Us</a>
       <a href="#faq">FAQ</a>
@@ -909,22 +1115,21 @@ footer{
 <main id="top">
   <div class="container">
 
-    <!-- ===== HERO ===== -->
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-pill"><span class="dot"></span> Online · Instant Delivery</div>
       <h1 class="hero-title">God Sunil <span>Panel Store</span></h1>
       <p class="hero-sub">
-        <i class="fas fa-bolt"></i> Premium gaming panels — Root &amp; Non-Root.
-        <i class="fas fa-shield-alt"></i> Trusted since 2024.
+        <i class="fas fa-bolt"></i> Premium gaming panels — pay in <strong style="color:#4ade80">INR (UPI)</strong>
+        or <strong style="color:var(--binance)">USDT (Binance Pay)</strong>.
       </p>
       <div class="hero-stats">
         <div class="stat"><b id="statPanels">16</b><span>Premium Panels</span></div>
         <div class="stat"><b>24/7</b><span>Live Support</span></div>
         <div class="stat"><b>Instant</b><span>Auto Delivery</span></div>
-        <div class="stat"><b>100%</b><span>Secure UPI</span></div>
+        <div class="stat"><b>2-in-1</b><span>INR &amp; USDT</span></div>
       </div>
 
-      <!-- ===== MAIN TELEGRAM JOIN CARD ===== -->
       <a class="tg-join-card"
          href="https://t.me/godsunil2k_store_update"
          target="_blank" rel="noopener"
@@ -940,9 +1145,38 @@ footer{
         <span class="tg-join-btn"><i class="fab fa-telegram-plane"></i> Join</span>
       </a>
     </section>
+
+    <!-- CURRENCY SWITCHER -->
+    <section id="currency" style="padding-top:.5rem;">
+      <div class="currency-switch" role="tablist" aria-label="Store currency">
+        <button class="currency-btn active" data-currency="inr" role="tab" aria-selected="true">
+          <span class="currency-icon">₹</span>
+          <span class="currency-meta">
+            <span class="currency-title">INR Store</span>
+            <span class="currency-sub">Prices in ₹ · Pay via UPI</span>
+          </span>
+        </button>
+        <button class="currency-btn" data-currency="usdt" role="tab" aria-selected="false">
+          <span class="currency-icon">₮</span>
+          <span class="currency-meta">
+            <span class="currency-title">USDT Store</span>
+            <span class="currency-sub">Prices in USDT · Binance Pay</span>
+          </span>
+        </button>
+      </div>
+
+      <!-- Active section header -->
+      <div class="store-section-header inr" id="storeHeader">
+        <span class="sst-flag">🇮🇳</span>
+        <span class="sst-info">
+          <span class="sst-title">INR Store — Prices in Indian Rupees</span>
+          <span class="sst-desc">Pay securely via UPI QR · Instant delivery on Telegram</span>
+        </span>
+      </div>
+    </section>
   </div>
 
-  <!-- ===== TOOLBAR ===== -->
+  <!-- TOOLBAR -->
   <div class="toolbar" id="panels">
     <div class="toolbar-inner">
       <div class="search-wrap">
@@ -977,7 +1211,7 @@ footer{
     </div>
   </div>
 
-  <!-- ===== TRUST ===== -->
+  <!-- TRUST -->
   <section class="trust container reveal" id="why">
     <h2 class="sec-title">Why Choose Us</h2>
     <p class="sec-sub">Built for gamers, backed by real support.</p>
@@ -988,9 +1222,9 @@ footer{
         <p>Keys and access delivered within minutes of payment confirmation — no waiting around.</p>
       </div>
       <div class="trust-card">
-        <div class="trust-icon"><i class="fas fa-headset"></i></div>
-        <h3>24/7 Support</h3>
-        <p>Our Telegram support is always online to help with setup, renewals or any issue.</p>
+        <div class="trust-icon"><i class="fas fa-indian-rupee-sign"></i></div>
+        <h3>Pay in INR or USDT</h3>
+        <p>Choose what works for you — UPI in rupees, or Binance Pay in USDT. No hidden charges.</p>
       </div>
       <div class="trust-card">
         <div class="trust-icon"><i class="fas fa-shield-halved"></i></div>
@@ -998,21 +1232,25 @@ footer{
         <p>Every panel is tested before listing. Safe, stable and regularly updated by the devs.</p>
       </div>
       <div class="trust-card">
-        <div class="trust-icon"><i class="fas fa-lock"></i></div>
-        <h3>Secure UPI Payment</h3>
-        <p>Pay directly via UPI QR. No card details, no third-party gateways, no hidden charges.</p>
+        <div class="trust-icon"><i class="fab fa-bitcoin"></i></div>
+        <h3>Secure Payments</h3>
+        <p>UPI for INR, Binance Pay for USDT. No card details, no third-party gateways, no risk.</p>
       </div>
     </div>
   </section>
 
-  <!-- ===== FAQ ===== -->
+  <!-- FAQ -->
   <section class="faq container reveal" id="faq">
     <h2 class="sec-title">Frequently Asked</h2>
     <p class="sec-sub">Everything you need to know before buying.</p>
     <div class="faq-list">
       <div class="faq-item">
         <button class="faq-q">How do I buy a panel? <i class="fas fa-chevron-down"></i></button>
-        <div class="faq-a"><p>Tap <strong>Buy Now</strong> on any plan, scan the UPI QR (or copy the UPI ID) and pay the exact amount. Then send the payment screenshot to our Telegram — your panel access is delivered instantly.</p></div>
+        <div class="faq-a"><p>Pick your currency at the top (<strong>INR Store</strong> or <strong>USDT Store</strong>), tap <strong>Buy Now</strong> on any plan, pay via the shown method, then send the payment screenshot to our Telegram — your panel access is delivered instantly.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What's the difference between INR and USDT? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a"><p>The panels are the same — only the currency and payment method differ. The <strong>INR Store</strong> lists prices in rupees and takes UPI payments. The <strong>USDT Store</strong> lists prices in Tether and takes Binance Pay. Switch anytime with the toggle at the top.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">What's the difference between Root and Non-Root? <i class="fas fa-chevron-down"></i></button>
@@ -1020,15 +1258,11 @@ footer{
       </div>
       <div class="faq-item">
         <button class="faq-q">How fast is delivery? <i class="fas fa-chevron-down"></i></button>
-        <div class="faq-a"><p>Delivery is usually instant — most orders are completed within 2–10 minutes after we receive your screenshot. During peak hours it may take a little longer, but our team is always on it.</p></div>
+        <div class="faq-a"><p>Delivery is usually instant — most orders complete within 2–10 minutes after we receive your payment screenshot. During peak hours it may take a little longer, but our team is always on it.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Is my payment safe? <i class="fas fa-chevron-down"></i></button>
-        <div class="faq-a"><p>Yes. We accept UPI only — you pay directly from your own UPI app. We never ask for card details, OTPs or passwords. Never share your UPI PIN with anyone.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Do you offer replacements or refunds? <i class="fas fa-chevron-down"></i></button>
-        <div class="faq-a"><p>If a panel doesn't work as described, contact us on Telegram within 24 hours and we'll replace it or sort it out. Refunds are handled case-by-case — reach out and we'll help.</p></div>
+        <div class="faq-a"><p>Yes. UPI payments go directly from your UPI app. Binance Pay is a secure in-app transfer between Binance accounts. We never ask for card details, OTPs, UPI PINs, or Binance credentials — never share those with anyone.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Where do I get the APK download? <i class="fas fa-chevron-down"></i></button>
@@ -1038,15 +1272,15 @@ footer{
   </section>
 </main>
 
-<!-- ===== FOOTER ===== -->
+<!-- FOOTER -->
 <footer>
   <div class="foot-inner">
     <div class="foot-brand">GOD SUNIL PANEL STORE</div>
-    <p class="foot-tag">Premium gaming panels · Root &amp; Non-Root · Trusted since 2024</p>
+    <p class="foot-tag">Premium gaming panels · INR &amp; USDT · Trusted since 2024</p>
     <div class="foot-links">
       <a href="https://t.me/godsunil2k_store_update" target="_blank" rel="noopener"><i class="fab fa-telegram-plane"></i> Updates Channel</a>
       <a href="https://t.me/GodSunil2k" target="_blank" rel="noopener"><i class="fas fa-headset"></i> Support</a>
-      <a href="#panels"><i class="fas fa-th-large"></i> All Panels</a>
+      <a href="#currency"><i class="fas fa-right-left"></i> Change Currency</a>
       <a href="#faq"><i class="fas fa-circle-question"></i> FAQ</a>
     </div>
     <p class="foot-note">
@@ -1057,7 +1291,7 @@ footer{
   </div>
 </footer>
 
-<!-- ===== FAB / BACK TO TOP / TOASTS ===== -->
+<!-- FAB / BACK TO TOP / TOASTS -->
 <a class="fab" href="https://t.me/godsunil2k_store_update" target="_blank" rel="noopener" aria-label="Join Telegram">
   <i class="fab fa-telegram-plane"></i>
   <span class="tooltip"><i class="fas fa-rocket"></i> Join Telegram Updates</span>
@@ -1065,35 +1299,58 @@ footer{
 <button id="backTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 <div id="toastBox"></div>
 
-<!-- ===== PAYMENT MODAL ===== -->
+<!-- PAYMENT MODAL -->
 <div class="modal-overlay" id="paymentModal" role="dialog" aria-modal="true" aria-labelledby="modalProductName">
-  <div class="modal">
+  <div class="modal" id="modalBox">
     <button class="modal-close" id="modalClose" aria-label="Close"><i class="fas fa-times"></i></button>
 
-    <div class="modal-icon"><i class="fas fa-shield-halved"></i></div>
+    <div class="modal-icon" id="modalIcon"><i class="fas fa-indian-rupee-sign"></i></div>
     <div class="modal-title" id="modalProductName">Product Name</div>
     <div class="modal-sub"><strong id="modalDuration">Duration</strong> &nbsp;·&nbsp; <span id="modalPrice">Price</span></div>
 
     <div class="stepper">
-      <div class="step on"><span class="num">1</span> Scan &amp; Pay</div>
+      <div class="step on"><span class="num">1</span> <span id="step1Label">Pay via UPI</span></div>
       <span class="step-line"></span>
       <div class="step"><span class="num">2</span> Send Screenshot</div>
     </div>
 
     <div class="modal-amount">
-      <span class="lbl">Amount to Pay</span>
+      <div>
+        <span class="lbl" id="amountLabel">Total (INR)</span>
+        <span class="sub-amt" id="modalAmountSub">≈ $0.00 USDT</span>
+      </div>
       <span class="val" id="modalAmount">₹0</span>
     </div>
 
-    <div class="modal-upi">
-      <span class="upi-label"><i class="fas fa-qrcode"></i> UPI ID</span>
-      <span class="upi-id" id="upiId">suniloraon382@upi</span>
-      <button class="btn-copy" id="copyUpiBtn"><i class="fas fa-copy"></i> Copy</button>
+    <div class="pay-tabs" id="payTabs">
+      <button class="pay-tab" data-method="upi"><i class="fas fa-indian-rupee-sign"></i> UPI (INR)</button>
+      <button class="pay-tab active" data-method="binance"><i class="fab fa-bitcoin"></i> Binance Pay</button>
     </div>
 
-    <div class="modal-qr">
-      <div id="qrCodeContainer"><div class="qr-placeholder"><i class="fas fa-qrcode"></i></div></div>
-      <div class="qr-text"><i class="fas fa-camera"></i> Scan with any UPI app to pay</div>
+    <!-- Binance Pay panel -->
+    <div class="pay-panel" data-method="binance">
+      <div class="modal-upi binance">
+        <span class="upi-label"><i class="fab fa-bitcoin"></i> Binance Pay ID</span>
+        <span class="upi-id" id="binanceId">1230906319</span>
+        <button class="btn-copy" id="copyBinanceBtn"><i class="fas fa-copy"></i> Copy</button>
+      </div>
+      <div class="modal-qr binance">
+        <div id="binanceQrContainer"><div class="qr-placeholder"><i class="fas fa-qrcode"></i></div></div>
+        <div class="qr-text"><i class="fab fa-bitcoin"></i> Scan with Binance App to pay in USDT</div>
+      </div>
+    </div>
+
+    <!-- UPI panel -->
+    <div class="pay-panel active" data-method="upi">
+      <div class="modal-upi">
+        <span class="upi-label"><i class="fas fa-qrcode"></i> UPI ID</span>
+        <span class="upi-id" id="upiId">suniloraon382@upi</span>
+        <button class="btn-copy" id="copyUpiBtn"><i class="fas fa-copy"></i> Copy</button>
+      </div>
+      <div class="modal-qr">
+        <div id="qrCodeContainer"><div class="qr-placeholder"><i class="fas fa-qrcode"></i></div></div>
+        <div class="qr-text"><i class="fas fa-camera"></i> Scan with any UPI app</div>
+      </div>
     </div>
 
     <a class="btn-telegram" id="telegramBtn" href="https://t.me/GodSunil2k" target="_blank" rel="noopener">
@@ -1108,287 +1365,356 @@ footer{
 
 <script>
 /* ==========================================================
-   GOD SUNIL PANEL STORE — APP
+   GOD SUNIL PANEL STORE — Dual Currency (INR + USDT)
    ========================================================== */
 
+/* ---------- SETTINGS ---------- */
+const UPI_ID         = 'suniloraon382@upi';
+const BINANCE_ID     = '1230906319';
+const TELEGRAM_URL   = 'https://t.me/GodSunil2k';
+const USD_TO_INR     = 90;   // used only for approximate cross-currency sub-line
+const BINANCE_QR_IMG = 'binance-pay-qr.png'; // optional custom QR (GitHub root)
+
 /* ---------- PANEL DATA ----------
-   Each panel has its own `joinLink` for the per-panel Join button.
-   If omitted, the button falls back to `downloadLink`.
+   Every panel has plansINR and (optionally) plansUSDT.
+   If a panel has no plansUSDT, it only shows in the INR store.
 ----------------------------------- */
 const panelsData = [
   {
     id:'drip-nonroot',
-    name:'Drip Client - Non Root',
+    name:'Drip Client - APK MOD',
     badge:'Non Root',
     badgeType:'nonroot',
     logo:'https://i.ibb.co/fdJrgckG/serve-upload-1.png',
     joinLink:'https://t.me/DripClientOfficialChannel',
     downloadLink:'https://t.me/DripClientOfficialChannel',
-    tag:'Popular',
-    rating:4.9,
-    plans:[
-      {duration:'1 Day',price:'₹60'},
-      {duration:'3 Days',price:'₹140'},
-      {duration:'7 Days',price:'₹251'},
+    tag:'Popular', rating:4.9,
+    plansINR:[
+      {duration:'1 Day',  price:'₹60'},
+      {duration:'3 Days', price:'₹140'},
+      {duration:'7 Days', price:'₹251'},
       {duration:'15 Days',price:'₹401'},
       {duration:'30 Days',price:'₹600'}
+    ],
+    plansUSDT:[
+      {duration:'1 Day',  price:'$0.67'},
+      {duration:'3 Days', price:'$1.56'},
+      {duration:'7 Days', price:'$2.78'},
+      {duration:'15 Days',price:'$4.45'},
+      {duration:'30 Days',price:'$6.67'}
     ]
   },
   {
     id:'drip-root',
-    name:'Drip Client - Root',
-    badge:'Root ✅',
-    badgeType:'root',
+    name:'Drip Client - Root Device',
+    badge:'Root ✅', badgeType:'root',
     logo:'https://i.ibb.co/fdJrgckG/serve-upload-1.png',
     joinLink:'https://t.me/godsunil2k_store_update/11',
     downloadLink:'https://t.me/godsunil2k_store_update/11',
-    tag:'Hot',
-    rating:4.9,
-    plans:[
-      {duration:'1 Day',price:'₹90'},
-      {duration:'7 Days',price:'₹360'},
+    tag:'Hot', rating:4.9,
+    plansINR:[
+      {duration:'1 Day',  price:'₹90'},
+      {duration:'7 Days', price:'₹360'},
       {duration:'30 Days',price:'₹720'}
+    ],
+    plansUSDT:[
+      {duration:'1 Day',  price:'$1.00'},
+      {duration:'7 Days', price:'$4.00'},
+      {duration:'30 Days',price:'$8.00'}
     ]
   },
   {
     id:'hg-cheats',
-    name:'HG Cheats - Non Root + Root',
-    badge:'Non Root + Root',
-    badgeType:'pro',
+    name:'HG ApkMod - Non Root + Root',
+    badge:'Non Root + Root', badgeType:'pro',
     logo:'https://i.ibb.co/f53C6gZ/IMG-20260727-105950-693.jpg',
     joinLink:'https://t.me/HGCheatsOfficialChannel',
     downloadLink:'https://t.me/HGCheatsOfficialChannel',
-    tag:null,
-    rating:4.7,
-    plans:[
-      {duration:'1 Day',price:'₹80'},
+    tag:null, offer:'30%', rating:4.7,
+    plansINR:[
+      {duration:'1 Day',  price:'₹80'},
       {duration:'10 Days',price:'₹296'},
       {duration:'30 Days',price:'₹598'}
+    ],
+    plansUSDT:[
+      {duration:'1 Day',  price:'$0.70'},
+      {duration:'10 Days',price:'$3.20'},
+      {duration:'30 Days',price:'$5.50'}
     ]
   },
   {
     id:'prime-nonroot',
     name:'Prime Hook - Non Root',
-    badge:'Non Root',
-    badgeType:'nonroot',
+    badge:'Non Root', badgeType:'nonroot',
     logo:'https://i.ibb.co/zTvk1HfS/serve-upload.jpg',
     joinLink:'https://t.me/PRIME_HOOK_Official',
     downloadLink:'https://t.me/PRIME_HOOK_Official',
-    tag:'Best Value',
-    rating:4.8,
-    plans:[
-      {duration:'1 Day',price:'₹80'},
-      {duration:'3 Days',price:'₹130'},
-      {duration:'7 Days',price:'₹276'},
+    tag:'Best Value', offer:'10%', rating:4.8,
+    plansINR:[
+      {duration:'1 Day',  price:'₹80'},
+      {duration:'3 Days', price:'₹130'},
+      {duration:'7 Days', price:'₹276'},
       {duration:'10 Days',price:'₹308'}
+    ],
+    plansUSDT:[
+      {duration:'1 Day',  price:'$0.86'},
+      {duration:'3 Days', price:'$1.60'},
+      {duration:'7 Days', price:'$3.40'},
+      {duration:'10 Days',price:'$3.80'}
     ]
   },
   {
     id:'pato-nonroot',
-    name:'Pato Team - Non Root',
-    badge:'Non Root',
-    badgeType:'nonroot',
+    name:'Pato Team - ApkMod Orange',
+    badge:'Non Root', badgeType:'nonroot',
     logo:'https://i.ibb.co/yF9sSPd3/serve-upload.png',
     joinLink:'https://t.me/PatoTeamOfficialChannel',
     downloadLink:'https://t.me/PatoTeamOfficialChannel',
-    tag:null,
-    rating:4.6,
-    plans:[
-      {duration:'3 Day',price:'₹216'},
-      {duration:'7 Days',price:'₹358'},
+    tag:null, rating:4.6,
+    plansINR:[
+      {duration:'3 Days', price:'₹216'},
+      {duration:'7 Days', price:'₹358'},
       {duration:'15 Days',price:'₹605'},
       {duration:'30 Days',price:'₹990'}
+    ],
+    plansUSDT:[
+      {duration:'3 Days', price:'$2.00'},
+      {duration:'7 Days', price:'$4.00'},
+      {duration:'15 Days',price:'$6.00'},
+      {duration:'30 Days',price:'$10.00'}
     ]
   },
   {
     id:'angry-root',
     name:'Angry Mod - Root',
-    badge:'Root',
-    badgeType:'root',
+    badge:'Root', badgeType:'root',
     logo:'https://i.ibb.co/9kYhRhFF/IMG-20260704-202329-705.jpg',
     joinLink:'https://t.me/AngryModOfficialChannel',
     downloadLink:'https://t.me/AngryModOfficialChannel',
-    tag:null,
-    rating:4.7,
-    plans:[
-      {duration:'1 Day',price:'₹90'},
-      {duration:'7 Days',price:'₹340'},
-      {duration:'15 Day',price:'₹554'},
-      {duration:'30 Day',price:'₹800'}
+    tag:null, offer:'5%', rating:4.7,
+    plansINR:[
+      {duration:'1 Day',  price:'₹90'},
+      {duration:'7 Days', price:'₹340'},
+      {duration:'15 Days',price:'₹554'},
+      {duration:'30 Days',price:'₹800'}
+    ],
+    plansUSDT:[
+      {duration:'1 Day',  price:'$0.85'},
+      {duration:'7 Days', price:'$3.70'},
+      {duration:'15 Days',price:'$5.50'},
+      {duration:'30 Days',price:'$8.00'}
     ]
   },
   {
     id:'reafer-pro-root',
     name:'Reafer X Pro - Root',
-    badge:'Pro Panel',
-    badgeType:'pro',
+    badge:'Pro Panel', badgeType:'pro',
     logo:'https://i.ibb.co/3yyS3Z7S/01-KW9-GF9-GQJVR3-H6-Y8-MAJR02-VC-1.jpg',
     joinLink:'https://t.me/+raxeJNN1uDViM2I1',
     downloadLink:'https://t.me/+raxeJNN1uDViM2I1',
-    tag:'Premium',
-    rating:5.0,
-    plans:[
-      {duration:'1 Day',price:'₹90'},
+    tag:'Premium', rating:5.0,
+    plansINR:[
+      {duration:'1 Day', price:'₹90'},
       {duration:'10 Day',price:'₹350'},
       {duration:'20 Day',price:'₹594'},
       {duration:'31 Days',price:'₹801'}
     ]
+    /* No USDT prices provided — this panel appears only in the INR store */
   },
   {
     id:'silent-cheats-root',
-    name:'Silent Cheats Root - Root',
-    badge:'Root',
-    badgeType:'root',
+    name:'Silent Cheats Root - Safe',
+    badge:'Root', badgeType:'root',
     logo:'https://i.ibb.co/nMXQjf3N/IMG-20260905-232138-442.jpg',
     joinLink:'https://t.me/Silentcheats_OFC',
     downloadLink:'https://t.me/Silentcheats_OFC',
-    tag:'Popular',
-    rating:4.8,
-    plans:[
-      {duration:'1 Day',price:'₹90'},
-      {duration:'3 Days',price:'₹180'},
-      {duration:'7 Days',price:'₹350'},
+    tag:'Popular', rating:4.8,
+    plansINR:[
+      {duration:'1 Day',  price:'₹90'},
+      {duration:'3 Days', price:'₹180'},
+      {duration:'7 Days', price:'₹350'},
       {duration:'14 Days',price:'₹699'},
       {duration:'28 Days',price:'₹900'}
+    ],
+    plansUSDT:[
+      {duration:'1 Day',  price:'$1.00'},
+      {duration:'3 Days', price:'$2.00'},
+      {duration:'7 Days', price:'$3.88'},
+      {duration:'14 Days',price:'$6.66'},
+      {duration:'28 Days',price:'$10.00'}
     ]
   },
   {
     id:'haxx-cker-pro',
-    name:'HAXX CKER PRO - Root',
-    badge:'Root',
-    badgeType:'root',
+    name:'Haxx Cker Pro - Root',
+    badge:'Root', badgeType:'root',
     logo:'https://i.ibb.co/Ps5Lrgjv/IMG-20260728-104821-172.jpg',
     joinLink:'https://t.me/+PZSUld7gW2I0Y2Q1',
     downloadLink:'https://t.me/+PZSUld7gW2I0Y2Q1',
-    tag:'Premium',
-    rating:4.9,
-    plans:[
-      {duration:'10 Day',price:'₹549'},
-      {duration:'20 Days',price:'₹1044'},
-      {duration:'30 Days',price:'₹1449'},
-      {duration:'60 Days',price:'₹2700'},
+    tag:'Premium', rating:4.9,
+    plansINR:[
+      {duration:'10 Days', price:'₹549'},
+      {duration:'20 Days', price:'₹1044'},
+      {duration:'30 Days', price:'₹1449'},
+      {duration:'60 Days', price:'₹2700'},
       {duration:'120 Days',price:'₹5400'}
+    ],
+    plansUSDT:[
+      {duration:'10 Days', price:'$5.99'},
+      {duration:'20 Days', price:'$11.40'},
+      {duration:'30 Days', price:'$15.90'},
+      {duration:'60 Days', price:'$29.00'},
+      {duration:'120 Days',price:'$60.00'}
     ]
   },
   {
     id:'rapid-core-root',
-    name:'RAPID CORE - Root',
-    badge:'Root ✅',
-    badgeType:'root',
+    name:'Rapid Core - Root',
+    badge:'Root ✅', badgeType:'root',
     logo:'https://i.ibb.co/27hfnzJS/IMG-20260727-200128-275.jpg',
     joinLink:'https://t.me/RapidCoreOfficialChannel',
     downloadLink:'https://t.me/RapidCoreOfficialChannel',
-    tag:'Hot',
-    rating:4.8,
-    plans:[
-      {duration:'1 Day',price:'₹87'},
-      {duration:'7 Days',price:'₹297'},
+    tag:'Hot', rating:4.8,
+    plansINR:[
+      {duration:'1 Day',  price:'₹87'},
+      {duration:'7 Days', price:'₹297'},
       {duration:'14 Days',price:'₹539'},
       {duration:'30 Days',price:'₹1089'}
+    ],
+    plansUSDT:[
+      {duration:'1 Day',  price:'$0.97'},
+      {duration:'7 Days', price:'$3.31'},
+      {duration:'14 Days',price:'$5.99'},
+      {duration:'30 Days',price:'$12.10'}
     ]
   },
   {
     id:'br-mods',
     name:'BR MODS - Root',
-    badge:'Root ✅',
-    badgeType:'root',
+    badge:'Root ✅', badgeType:'root',
     logo:'https://i.ibb.co/G3k0SJcf/serve-upload-2.png',
     joinLink:'https://t.me/BRMODSOfficialChannel',
     downloadLink:'https://t.me/BRMODSOfficialChannel',
-    tag:'Best Value',
-    rating:4.7,
-    plans:[
-      {duration:'1 Day',price:'₹90'},
-      {duration:'7 Days',price:'₹270'},
+    tag:'Best Value', rating:4.7,
+    plansINR:[
+      {duration:'1 Day',  price:'₹90'},
+      {duration:'7 Days', price:'₹270'},
       {duration:'15 Days',price:'₹450'},
       {duration:'30 Days',price:'₹630'}
+    ],
+    plansUSDT:[
+      {duration:'1 Day',  price:'$0.97'},
+      {duration:'7 Days', price:'$3.31'},
+      {duration:'14 Days',price:'$5.99'},
+      {duration:'30 Days',price:'$10.00'}
     ]
   },
   {
     id:'hex-blade-root',
     name:'Hex Blade - Root',
-    badge:'Root',
-    badgeType:'root',
+    badge:'Root', badgeType:'root',
     logo:'https://i.ibb.co/0jHrCxrR/IMG-20260903-090315-565.jpg',
     joinLink:'https://t.me/HexBlade_OFC',
     downloadLink:'https://t.me/HexBlade_OFC',
-    tag:null,
-    rating:4.6,
-    plans:[
-      {duration:'1 Day',price:'₹90'},
+    tag:null, rating:4.6,
+    plansINR:[
+      {duration:'1 Day', price:'₹90'},
       {duration:'3 Days',price:'₹180'},
       {duration:'7 Days',price:'₹300'},
       {duration:'30 Day',price:'₹999'}
+    ],
+    plansUSDT:[
+      {duration:'1 Day', price:'$0.89'},
+      {duration:'3 Days',price:'$1.80'},
+      {duration:'7 Days',price:'$3.30'}
     ]
   },
   {
     id:'unseen-mods-root',
     name:'Unseen Mods - Root',
-    badge:'Root',
-    badgeType:'root',
+    badge:'Root', badgeType:'root',
     logo:'https://i.ibb.co/q3TNqXfD/unseen-mods-logo.jpg',
     joinLink:'https://t.me/UnseenMods_OFC',
     downloadLink:'https://t.me/UnseenMods_OFC',
-    tag:null,
-    rating:4.7,
-    plans:[
-      {duration:'1 Day',price:'₹90'},
+    tag:null, rating:4.7,
+    plansINR:[
+      {duration:'1 Day', price:'₹90'},
       {duration:'3 Days',price:'₹180'},
       {duration:'7 Days',price:'₹400'},
       {duration:'30 Day',price:'₹999'}
+    ],
+    plansUSDT:[
+      {duration:'1 Day', price:'$0.89'},
+      {duration:'3 Days',price:'$2.00'},
+      {duration:'7 Days',price:'$4.44'}
     ]
   },
   {
     id:'crack-master-root',
     name:'Crack Master - Root',
-    badge:'Root',
-    badgeType:'root',
+    badge:'Root', badgeType:'root',
     logo:'https://i.ibb.co/BKNj5CmZ/1788704117076.png',
     joinLink:'https://t.me/CrackMaster_OFC',
     downloadLink:'https://t.me/CrackMaster_OFC',
-    tag:'Best Value',
-    rating:4.8,
-    plans:[
-      {duration:'1 Day',price:'₹65'},
-      {duration:'3 Days',price:'₹135'},
-      {duration:'7 Days',price:'₹269'},
+    tag:'Best Value', rating:4.8,
+    plansINR:[
+      {duration:'1 Day',  price:'₹65'},
+      {duration:'3 Days', price:'₹135'},
+      {duration:'7 Days', price:'₹269'},
       {duration:'30 Days',price:'₹449'}
+    ],
+    plansUSDT:[
+      {duration:'1 Day',  price:'$0.70'},
+      {duration:'3 Days', price:'$1.50'},
+      {duration:'7 Days', price:'$2.98'},
+      {duration:'30 Days',price:'$5.00'}
     ]
   },
   {
     id:'drip-wire',
-    name:'Drip Wire - Non Root',
-    badge:'Non Root ✅',
-    badgeType:'nonroot',
+    name:'Drip Wire [Non Root] + iOS',
+    badge:'Non Root', badgeType:'nonroot',
     logo:'https://i.ibb.co/ynFxxJwv/1788707334391.png',
     joinLink:'https://t.me/DripWire_OFC',
     downloadLink:'https://t.me/DripWire_OFC',
-    tag:null,
-    rating:4.6,
-    plans:[
-      {duration:'6 Houre',price:'₹35'},
-      {duration:'12 Houre',price:'₹60'},
-      {duration:'1 Day',price:'₹90'},
-      {duration:'7 Days',price:'₹350'}
+    tag:null, offer:'5%', rating:4.6,
+    plansINR:[
+      {duration:'6 Hours', price:'₹35'},
+      {duration:'12 Hours',price:'₹60'},
+      {duration:'1 Day',   price:'₹90'},
+      {duration:'7 Days',  price:'₹350'}
+    ],
+    plansUSDT:[
+      {duration:'6 Hours', price:'$0.38'},
+      {duration:'12 Hours',price:'$0.60'},
+      {duration:'1 Day',   price:'$1.00'},
+      {duration:'7 Days',  price:'$3.89'}
     ]
   },
   {
     id:'abcd-nonroot',
-    name:'ABCD - Non Root',
-    badge:'Non Root',
-    badgeType:'nonroot',
+    name:'ABCD [Non Root]',
+    badge:'Non Root', badgeType:'nonroot',
     logo:'https://i.ibb.co/9HkVMRHW/IMG-20260906-203508-084.jpg',
     joinLink:'https://t.me/Buy_ABCD_Official',
     downloadLink:'https://t.me/Buy_ABCD_Official',
-    tag:'New',
-    rating:4.7,
-    plans:[
+    tag:'New', offer:'30%', rating:4.7,
+    plansINR:[
       {duration:'12 Hours',price:'₹60'},
-      {duration:'1 Day',price:'₹100'},
-      {duration:'7 Days',price:'₹499'}
+      {duration:'1 Day',   price:'₹100'},
+      {duration:'7 Days',  price:'₹499'}
+    ],
+    plansUSDT:[
+      {duration:'12 Hours',price:'$0.30'},
+      {duration:'1 Day',   price:'$0.60'},
+      {duration:'3 Days',  price:'$1.20'},
+      {duration:'7 Days',  price:'$2.20'}
     ]
   }
 ];
+
+/* ---------- STATE ---------- */
+const state = { q:'', filter:'all', sort:'featured', currency:'inr' };
 
 /* ---------- PRELOADER ---------- */
 (function(){
@@ -1419,13 +1745,12 @@ const panelsData = [
     const count = Math.min(72, Math.max(24, Math.floor(W*H/24000)));
     parts = [];
     for(let i=0;i<count;i++){
+      const isINR = state.currency === 'inr';
       parts.push({
-        x: Math.random()*W,
-        y: Math.random()*H,
-        vx: (Math.random()-.5)*.26,
-        vy: (Math.random()-.5)*.26,
+        x: Math.random()*W, y: Math.random()*H,
+        vx: (Math.random()-.5)*.26, vy: (Math.random()-.5)*.26,
         r: Math.random()*1.5 + .6,
-        c: Math.random() < .78 ? '0,245,212' : '255,179,71'
+        c: isINR ? '34,197,94' : '240,185,11'
       });
     }
   }
@@ -1433,17 +1758,16 @@ const panelsData = [
   function draw(){
     ctx.clearRect(0,0,W,H);
     const max = 118;
+    const strokeCol = state.currency === 'inr' ? '34,197,94' : '240,185,11';
     for(let i=0;i<parts.length;i++){
       const p = parts[i];
       p.x += p.vx; p.y += p.vy;
       if(p.x < -20) p.x = W+20; else if(p.x > W+20) p.x = -20;
       if(p.y < -20) p.y = H+20; else if(p.y > H+20) p.y = -20;
-
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
       ctx.fillStyle = 'rgba('+p.c+',.5)';
       ctx.fill();
-
       for(let j=i+1;j<parts.length;j++){
         const q = parts[j];
         const dx = p.x-q.x, dy = p.y-q.y;
@@ -1451,11 +1775,9 @@ const panelsData = [
         if(d2 < max*max){
           const a = (1 - Math.sqrt(d2)/max) * .16;
           ctx.beginPath();
-          ctx.moveTo(p.x,p.y);
-          ctx.lineTo(q.x,q.y);
-          ctx.strokeStyle = 'rgba(0,245,212,'+a+')';
-          ctx.lineWidth = .6;
-          ctx.stroke();
+          ctx.moveTo(p.x,p.y); ctx.lineTo(q.x,q.y);
+          ctx.strokeStyle = 'rgba('+strokeCol+','+a+')';
+          ctx.lineWidth = .6; ctx.stroke();
         }
       }
     }
@@ -1472,6 +1794,8 @@ const panelsData = [
     if(visible){ raf = requestAnimationFrame(draw); }
     else { cancelAnimationFrame(raf); }
   });
+  // expose rebuild so currency switch can refresh particles
+  window.__rebuildParticles = build;
 })();
 
 /* ---------- CURSOR GLOW ---------- */
@@ -1508,15 +1832,13 @@ const panelsData = [
 const toastBox = document.getElementById('toastBox');
 function toast(msg, type){
   type = type || 'success';
-  const icons = { success:'fa-circle-check', error:'fa-circle-exclamation', info:'fa-circle-info' };
+  const icons = { success:'fa-circle-check', error:'fa-circle-exclamation', info:'fa-circle-info',
+                  binance:'fa-bitcoin', rupee:'fa-indian-rupee-sign' };
   const el = document.createElement('div');
   el.className = 'toast ' + type;
   el.innerHTML = '<i class="fas '+(icons[type]||icons.success)+'"></i><span>'+msg+'</span>';
   toastBox.appendChild(el);
-  setTimeout(()=>{
-    el.classList.add('out');
-    setTimeout(()=> el.remove(), 320);
-  }, 2600);
+  setTimeout(()=>{ el.classList.add('out'); setTimeout(()=> el.remove(), 320); }, 2600);
 }
 
 /* ---------- HELPERS ---------- */
@@ -1532,8 +1854,15 @@ function tagClass(tag){
   return '';
 }
 function priceNum(p){ return parseFloat(String(p).replace(/[^\d.]/g,'')) || 0; }
-function minPrice(panel){ return Math.min.apply(null, panel.plans.map(pl=>priceNum(pl.price))); }
 function esc(s){ return String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function plansFor(panel, curr){ return curr === 'inr' ? panel.plansINR : panel.plansUSDT; }
+function minPrice(panel, curr){
+  const plans = plansFor(panel, curr);
+  if(!plans || !plans.length) return Infinity;
+  return Math.min.apply(null, plans.map(pl => priceNum(pl.price)));
+}
+function fmtUSD(v){ return '$' + Number(v).toFixed(2); }
+function fmtINR(v){ return '₹' + Math.round(v); }
 
 /* ---------- RENDER ---------- */
 const container = document.getElementById('panelsContainer');
@@ -1547,25 +1876,31 @@ function render(list){
   }
   noResults.style.display = 'none';
 
+  const curr = state.currency;
   let h = '';
   list.forEach((p, i)=>{
+    const plans = plansFor(p, curr);
+    if(!plans || !plans.length) return;
+
     const bc = gC(p.badgeType);
     const bc2 = bC(p.badgeType);
     const mC = mM(p.badgeType);
     const ic = p.badgeType==='root' ? 'check-circle' : p.badgeType==='pro' ? 'star' : 'circle';
     const typeLabel = p.badgeType==='root' ? 'Root' : p.badgeType==='pro' ? 'Pro' : 'Non-Root';
-
-    // Per-panel join link (falls back to downloadLink)
     const joinHref = p.joinLink || p.downloadLink;
 
     let ph = '';
-    p.plans.forEach(pl=>{
+    plans.forEach(pl=>{
+      const val = priceNum(pl.price);
+      const priceHTML = curr === 'inr'
+        ? '<span class="price">₹'+val+'<small>INR</small></span>'
+        : '<span class="price">$'+val.toFixed(2)+'<small>USDT</small></span>';
       ph += '<div class="price-card">'
           +   '<span class="duration"><i class="fas fa-clock"></i> '+esc(pl.duration)+'</span>'
-          +   '<span class="price">'+esc(pl.price)+'</span>'
+          +   priceHTML
           +   '<span class="badge-mini '+mC+'">'+typeLabel+'</span>'
-          +   '<button class="btn-buy '+bc2+'" data-panel="'+esc(p.name)+'" data-duration="'+esc(pl.duration)+'" data-price="'+esc(pl.price)+'">'
-          +     '<i class="fas fa-cart-plus"></i> Buy Now'
+          +   '<button class="btn-buy '+bc2+'" data-panel-id="'+esc(p.id)+'" data-duration="'+esc(pl.duration)+'" data-currency="'+curr+'">'
+          +     '<i class="fas fa-bolt"></i> Buy Now'
           +   '</button>'
           +   '<a href="'+esc(p.downloadLink)+'" target="_blank" rel="noopener" class="download-link">'
           +     '<i class="fas fa-download"></i> Download APK'
@@ -1573,12 +1908,9 @@ function render(list){
           + '</div>';
     });
 
-    const tagHtml = p.tag
-      ? '<span class="panel-tag '+tagClass(p.tag)+'">'+esc(p.tag)+'</span>'
-      : '';
-    const ratingHtml = p.rating
-      ? '<span class="panel-rating"><i class="fas fa-star"></i> '+Number(p.rating).toFixed(1)+'</span>'
-      : '';
+    const tagHtml = p.tag ? '<span class="panel-tag '+tagClass(p.tag)+'">'+esc(p.tag)+'</span>' : '';
+    const offerHtml = p.offer ? '<span class="offer-badge"><i class="fas fa-tags"></i> '+esc(p.offer)+' OFF</span>' : '';
+    const ratingHtml = p.rating ? '<span class="panel-rating"><i class="fas fa-star"></i> '+Number(p.rating).toFixed(1)+'</span>' : '';
 
     h += '<section class="panel-section" style="--i:'+Math.min(i,12)+'">'
       +   '<div class="panel-glow"></div>'
@@ -1591,7 +1923,7 @@ function render(list){
       +       '<div class="panel-name">'+esc(p.name)+'</div>'
       +       '<div class="panel-tags">'
       +         '<span class="panel-badge '+bc+'"><i class="fas fa-'+ic+'"></i> '+esc(p.badge)+'</span>'
-      +         tagHtml + ratingHtml
+      +         tagHtml + offerHtml + ratingHtml
       +       '</div>'
       +     '</div>'
       +     '<a class="panel-join-btn" href="'+esc(joinHref)+'" target="_blank" rel="noopener" '
@@ -1607,28 +1939,29 @@ function render(list){
 }
 
 /* ---------- FILTER / SORT / SEARCH ---------- */
-const state = { q:'', filter:'all', sort:'featured' };
-
 function applyFilters(){
-  let list = panelsData.map((p,i)=>({ p:p, i:i }));
+  const curr = state.currency;
+  let list = panelsData
+    .map((p,i)=>({ p:p, i:i }))
+    .filter(x => { const pl = plansFor(x.p, curr); return pl && pl.length > 0; });
 
   if(state.filter !== 'all'){
     list = list.filter(x => x.p.badgeType === state.filter);
   }
-
   if(state.q){
     const q = state.q.toLowerCase().trim();
-    list = list.filter(x =>
-      x.p.name.toLowerCase().includes(q) ||
-      x.p.badge.toLowerCase().includes(q) ||
-      (x.p.tag && x.p.tag.toLowerCase().includes(q)) ||
-      x.p.plans.some(pl => pl.duration.toLowerCase().includes(q) || pl.price.toLowerCase().includes(q))
-    );
+    list = list.filter(x => {
+      const plans = plansFor(x.p, curr);
+      return x.p.name.toLowerCase().includes(q)
+        || x.p.badge.toLowerCase().includes(q)
+        || (x.p.tag && x.p.tag.toLowerCase().includes(q))
+        || plans.some(pl => pl.duration.toLowerCase().includes(q) || pl.price.toLowerCase().includes(q));
+    });
   }
 
   switch(state.sort){
-    case 'price-asc':  list.sort((a,b)=> minPrice(a.p) - minPrice(b.p)); break;
-    case 'price-desc': list.sort((a,b)=> minPrice(b.p) - minPrice(a.p)); break;
+    case 'price-asc':  list.sort((a,b)=> minPrice(a.p,curr) - minPrice(b.p,curr)); break;
+    case 'price-desc': list.sort((a,b)=> minPrice(b.p,curr) - minPrice(a.p,curr)); break;
     case 'rating':     list.sort((a,b)=> (b.p.rating||0) - (a.p.rating||0)); break;
     case 'name':       list.sort((a,b)=> a.p.name.localeCompare(b.p.name)); break;
     default:           list.sort((a,b)=> a.i - b.i);
@@ -1669,10 +2002,57 @@ document.getElementById('sortSelect').addEventListener('change', e=>{
   applyFilters();
 });
 
-/* Initial render */
+/* ---------- CURRENCY SWITCHER ---------- */
+const storeHeader = document.getElementById('storeHeader');
+const currencyBtns = document.querySelectorAll('.currency-btn');
+
+function switchCurrency(curr){
+  if(state.currency === curr) return;
+  state.currency = curr;
+
+  document.body.classList.remove('mode-inr','mode-usdt');
+  document.body.classList.add('mode-' + curr);
+
+  currencyBtns.forEach(b=>{
+    const on = b.dataset.currency === curr;
+    b.classList.toggle('active', on);
+    b.setAttribute('aria-selected', on ? 'true' : 'false');
+  });
+
+  if(curr === 'inr'){
+    storeHeader.className = 'store-section-header inr';
+    storeHeader.innerHTML =
+      '<span class="sst-flag">🇮🇳</span>'
+      + '<span class="sst-info">'
+      +   '<span class="sst-title">INR Store — Prices in Indian Rupees</span>'
+      +   '<span class="sst-desc">Pay securely via UPI QR · Instant delivery on Telegram</span>'
+      + '</span>';
+  } else {
+    storeHeader.className = 'store-section-header usdt';
+    storeHeader.innerHTML =
+      '<span class="sst-flag">₮</span>'
+      + '<span class="sst-info">'
+      +   '<span class="sst-title">USDT Store — Prices in Tether (USDT)</span>'
+      +   '<span class="sst-desc">Pay via Binance Pay · Instant delivery on Telegram</span>'
+      + '</span>';
+  }
+
+  // refresh particles with new accent colour
+  if(typeof window.__rebuildParticles === 'function') window.__rebuildParticles();
+
+  applyFilters();
+  toast('Switched to ' + (curr==='inr' ? 'INR Store' : 'USDT Store'), curr==='inr' ? 'rupee' : 'binance');
+}
+
+currencyBtns.forEach(b=>{
+  b.addEventListener('click', ()=> switchCurrency(b.dataset.currency));
+});
+
+/* ---------- INITIAL RENDER ---------- */
 document.getElementById('statPanels').textContent = panelsData.length;
 document.getElementById('year').textContent = new Date().getFullYear();
-render(panelsData);
+document.body.classList.add('mode-inr');
+render(panelsData.filter(p => plansFor(p,'inr').length));
 
 /* ---------- FAQ ACCORDION ---------- */
 document.querySelectorAll('.faq-item').forEach(item=>{
@@ -1700,56 +2080,156 @@ document.querySelectorAll('.faq-item').forEach(item=>{
   }
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(en=>{
-      if(en.isIntersecting){
-        en.target.classList.add('in');
-        io.unobserve(en.target);
-      }
+      if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
     });
   }, { threshold:.12, rootMargin:'0px 0px -60px 0px' });
   els.forEach(el => io.observe(el));
 })();
 
-/* ---------- PAYMENT MODAL ---------- */
-const modal      = document.getElementById('paymentModal');
-const mClose     = document.getElementById('modalClose');
-const mName      = document.getElementById('modalProductName');
-const mDur       = document.getElementById('modalDuration');
-const mPrice     = document.getElementById('modalPrice');
-const mAmount    = document.getElementById('modalAmount');
-const upiEl      = document.getElementById('upiId');
-const copyBtn    = document.getElementById('copyUpiBtn');
-const qrEl       = document.getElementById('qrCodeContainer');
-const tgBtn      = document.getElementById('telegramBtn');
-const UPI        = 'suniloraon382@upi';
-const TELEGRAM   = 'https://t.me/GodSunil2k';
+/* ==========================================================
+   PAYMENT MODAL
+   ========================================================== */
+const modal        = document.getElementById('paymentModal');
+const modalBox     = document.getElementById('modalBox');
+const modalIcon    = document.getElementById('modalIcon');
+const mClose       = document.getElementById('modalClose');
+const mName        = document.getElementById('modalProductName');
+const mDur         = document.getElementById('modalDuration');
+const mPrice       = document.getElementById('modalPrice');
+const mAmount      = document.getElementById('modalAmount');
+const mAmountSub   = document.getElementById('modalAmountSub');
+const amountLabel  = document.getElementById('amountLabel');
+const step1Label   = document.getElementById('step1Label');
+const upiEl        = document.getElementById('upiId');
+const binanceEl    = document.getElementById('binanceId');
+const copyUpiBtn   = document.getElementById('copyUpiBtn');
+const copyBinBtn   = document.getElementById('copyBinanceBtn');
+const qrEl         = document.getElementById('qrCodeContainer');
+const binanceQrEl  = document.getElementById('binanceQrContainer');
+const tgBtn        = document.getElementById('telegramBtn');
+const payTabs      = document.getElementById('payTabs');
 
-function genQR(amt){
+let currentPayMethod = 'upi';
+let currentINR = 0;
+let currentUSDT = 0;
+
+function genUPIQR(inrAmount){
   qrEl.innerHTML = '<div class="qr-placeholder"><i class="fas fa-qrcode"></i></div>';
-  const upiStr = 'upi://pay?pa=' + encodeURIComponent(UPI)
+  const upiStr = 'upi://pay?pa=' + encodeURIComponent(UPI_ID)
                + '&pn=' + encodeURIComponent('God Sunil Store')
-               + '&am=' + encodeURIComponent(amt)
+               + '&am=' + encodeURIComponent(inrAmount)
                + '&cu=INR';
   const url = 'https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=6&data=' + encodeURIComponent(upiStr);
   const img = document.createElement('img');
-  img.alt = 'UPI Payment QR';
-  img.width = 190; img.height = 190;
+  img.alt = 'UPI Payment QR'; img.width = 190; img.height = 190;
   img.style.cssText = 'width:190px;height:190px;border-radius:8px;display:block;margin:0 auto';
   img.onload = ()=>{ qrEl.innerHTML=''; qrEl.appendChild(img); };
   img.onerror = ()=>{ qrEl.innerHTML = '<div style="padding:1rem;color:#8892a8;font-size:.78rem"><i class="fas fa-exclamation-triangle"></i><br>QR unavailable — use UPI ID above</div>'; };
   img.src = url;
 }
 
-function openModal(name, dur, price){
-  const amt = String(price).replace(/[^\d.]/g,'');
-  mName.textContent = name;
-  mDur.textContent = dur;
-  mPrice.textContent = price;
-  mAmount.textContent = price;
-  upiEl.textContent = UPI;
-  tgBtn.href = TELEGRAM;
-  copyBtn.classList.remove('copied');
-  copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copy';
-  genQR(amt);
+function genBinanceQR(){
+  binanceQrEl.innerHTML = '<div class="qr-placeholder"><i class="fas fa-qrcode"></i></div>';
+  const img = document.createElement('img');
+  img.alt = 'Binance Pay QR'; img.width = 190; img.height = 190;
+  img.style.cssText = 'width:190px;height:190px;border-radius:8px;display:block;margin:0 auto;background:#fff';
+  img.onerror = ()=>{
+    const fb = document.createElement('img');
+    fb.alt = 'Binance Pay ID QR'; fb.width = 190; fb.height = 190;
+    fb.style.cssText = 'width:190px;height:190px;border-radius:8px;display:block;margin:0 auto;background:#fff';
+    fb.src = 'https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=6&data=' + encodeURIComponent(BINANCE_ID);
+    binanceQrEl.innerHTML = ''; binanceQrEl.appendChild(fb);
+  };
+  img.onload = ()=>{ binanceQrEl.innerHTML=''; binanceQrEl.appendChild(img); };
+  img.src = BINANCE_QR_IMG + '?v=' + Date.now();
+}
+
+function updateAmountDisplay(){
+  if(currentPayMethod === 'upi'){
+    amountLabel.textContent = 'Total (INR)';
+    mAmount.innerHTML = fmtINR(currentINR);
+    mAmountSub.textContent = '≈ ' + fmtUSD(currentUSDT) + ' USDT (at ₹' + USD_TO_INR + '/USDT)';
+    step1Label.textContent = 'Pay via UPI';
+  } else {
+    amountLabel.textContent = 'Total (USDT)';
+    mAmount.innerHTML = fmtUSD(currentUSDT) + ' <small>USDT</small>';
+    mAmountSub.textContent = '≈ ' + fmtINR(currentINR) + ' INR';
+    step1Label.textContent = 'Pay via Binance';
+  }
+}
+
+function setPayMethod(method){
+  currentPayMethod = method;
+  document.querySelectorAll('.pay-tab').forEach(t=>{
+    t.classList.toggle('active', t.dataset.method === method);
+  });
+  document.querySelectorAll('.pay-panel').forEach(p=>{
+    p.classList.toggle('active', p.dataset.method === method);
+  });
+  updateAmountDisplay();
+}
+
+payTabs.addEventListener('click', e=>{
+  const t = e.target.closest('.pay-tab');
+  if(!t) return;
+  setPayMethod(t.dataset.method);
+});
+
+function openModal(panelId, duration, currency){
+  const panel = panelsData.find(x => x.id === panelId);
+  if(!panel) return;
+
+  const curr = currency || state.currency;
+  const plans = plansFor(panel, curr);
+  if(!plans) return;
+  const plan = plans.find(x => x.duration === duration);
+  if(!plan) return;
+
+  // Compute both INR and USDT values (prefer exact price from matching duration, else convert)
+  let inrVal, usdtVal;
+  if(curr === 'inr'){
+    inrVal = priceNum(plan.price);
+    const other = panel.plansUSDT && panel.plansUSDT.find(x=>x.duration === duration);
+    usdtVal = other ? priceNum(other.price) : inrVal / USD_TO_INR;
+  } else {
+    usdtVal = priceNum(plan.price);
+    const other = panel.plansINR && panel.plansINR.find(x=>x.duration === duration);
+    inrVal = other ? priceNum(other.price) : usdtVal * USD_TO_INR;
+  }
+  currentINR  = inrVal;
+  currentUSDT = usdtVal;
+
+  // Fill modal
+  mName.textContent = panel.name;
+  mDur.textContent = duration;
+  mPrice.textContent = (curr === 'inr')
+    ? ('₹' + inrVal + ' · ' + fmtUSD(usdtVal) + ' USDT')
+    : (fmtUSD(usdtVal) + ' USDT · ₹' + Math.round(inrVal));
+  upiEl.textContent = UPI_ID;
+  binanceEl.textContent = BINANCE_ID;
+  tgBtn.href = TELEGRAM_URL;
+
+  [copyUpiBtn, copyBinBtn].forEach(b=>{
+    b.classList.remove('copied');
+    b.innerHTML = '<i class="fas fa-copy"></i> Copy';
+  });
+
+  // Icon / theme based on currency store
+  if(curr === 'inr'){
+    modalBox.classList.add('rupee');
+    modalIcon.innerHTML = '<i class="fas fa-indian-rupee-sign"></i>';
+  } else {
+    modalBox.classList.remove('rupee');
+    modalIcon.innerHTML = '<i class="fab fa-bitcoin"></i>';
+  }
+
+  // Generate QRs
+  genBinanceQR();
+  genUPIQR(Math.round(inrVal));
+
+  // Default payment method follows the active store
+  setPayMethod(curr === 'inr' ? 'upi' : 'binance');
+
   modal.classList.add('active');
   document.body.style.overflow = 'hidden';
 }
@@ -1757,51 +2237,51 @@ function openModal(name, dur, price){
 function closeModal(){
   modal.classList.remove('active');
   document.body.style.overflow = '';
-  setTimeout(()=>{ qrEl.innerHTML = '<div class="qr-placeholder"><i class="fas fa-qrcode"></i></div>'; }, 300);
+  setTimeout(()=>{
+    qrEl.innerHTML = '<div class="qr-placeholder"><i class="fas fa-qrcode"></i></div>';
+    binanceQrEl.innerHTML = '<div class="qr-placeholder"><i class="fas fa-qrcode"></i></div>';
+  }, 300);
 }
 
 document.addEventListener('click', e=>{
   const b = e.target.closest('.btn-buy');
-  if(b){
-    openModal(b.dataset.panel, b.dataset.duration, b.dataset.price);
-  }
+  if(b) openModal(b.dataset.panelId, b.dataset.duration, b.dataset.currency);
 });
 mClose.addEventListener('click', closeModal);
 modal.addEventListener('click', e=>{ if(e.target === modal) closeModal(); });
 document.addEventListener('keydown', e=>{ if(e.key === 'Escape' && modal.classList.contains('active')) closeModal(); });
 
-/* ---------- COPY UPI ---------- */
-copyBtn.addEventListener('click', ()=>{
-  const text = UPI;
+/* ---------- COPY ---------- */
+function copyText(text, btn, label, ttype){
   if(navigator.clipboard && navigator.clipboard.writeText){
-    navigator.clipboard.writeText(text).then(copyDone).catch(()=> fallbackCopy(text));
-  } else {
-    fallbackCopy(text);
-  }
-});
-function fallbackCopy(text){
+    navigator.clipboard.writeText(text).then(()=>copyOk(btn, label, ttype)).catch(()=>fallbackCopy(text, btn, label, ttype));
+  } else fallbackCopy(text, btn, label, ttype);
+}
+function fallbackCopy(text, btn, label, ttype){
   const ta = document.createElement('textarea');
   ta.value = text;
   ta.style.cssText = 'position:fixed;top:-1000px;opacity:0';
   document.body.appendChild(ta);
   ta.select();
-  try{ document.execCommand('copy'); copyDone(); }
-  catch(_){ toast('Copy failed — UPI: ' + text, 'error'); }
+  try{ document.execCommand('copy'); copyOk(btn, label, ttype); }
+  catch(_){ toast('Copy failed — ' + text, 'error'); }
   document.body.removeChild(ta);
 }
-function copyDone(){
-  copyBtn.classList.add('copied');
-  copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-  toast('UPI ID copied to clipboard');
+function copyOk(btn, label, ttype){
+  btn.classList.add('copied');
+  btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+  toast(label + ' copied', ttype || 'success');
   setTimeout(()=>{
-    copyBtn.classList.remove('copied');
-    copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copy';
+    btn.classList.remove('copied');
+    btn.innerHTML = '<i class="fas fa-copy"></i> Copy';
   }, 2200);
 }
+copyUpiBtn.addEventListener('click', ()=> copyText(UPI_ID, copyUpiBtn, 'UPI ID', 'rupee'));
+copyBinBtn.addEventListener('click', ()=> copyText(BINANCE_ID, copyBinBtn, 'Binance Pay ID', 'binance'));
 
 /* ---------- READY ---------- */
-console.log('%c👑 God Sunil Panel Store','color:#00f5d4;font-weight:800;font-size:14px');
-console.log('%c'+panelsData.length+' panels loaded · per-panel Join buttons enabled','color:#8892a8;font-size:11px');
+console.log('%c👑 God Sunil Panel Store','color:#4ade80;font-weight:800;font-size:14px');
+console.log('%c'+panelsData.length+' panels · INR & USDT stores · toggle at the top','color:#8892a8;font-size:11px');
 </script>
 </body>
 </html>
