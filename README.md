@@ -1,2 +1,2 @@
 # god-sunil-panel-store
-god-sunil-panel-store
+Buy : https://buy.godsunilpanelstore.workers.dev/
